@@ -1,9 +1,14 @@
 import React from "react";
 import LocationHeader from "../SignUp/LocationHeader";
-import "../../assets/css/allGames.css";
 import GameList from "../HomePages/GameList";
 import Numbers from "../HomePages/Numbers";
 import ConnectUs from "../HomePages/ConnectUs";
+import Caro from "../../assets/img/Caro.jpg";
+import colorBlastImg from "../../assets/img/colorblast.jpg";
+import Fruit from "../../assets/img/FruitNinja.jpg";
+import Snake from "../../assets/img/Snakes.jpg";
+import TwoGame from "../../assets/img/2048.jpg";
+import "../../assets/css/allGames.css";
 
 export default function AllGames() {
   return (
@@ -87,41 +92,31 @@ export default function AllGames() {
         <div className="allGames__list row">
           <GameList
             name={"portfolio__item item__pic1 wow"}
-            img={
-              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-            }
+            img={Caro}
             route="/caroGame/room"
             title={"Caro Game Online"}
           />
           <GameList
             name={"portfolio__item item__pic2 wow"}
-            img={
-              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-            }
+            img={colorBlastImg}
             route="/colorBlastGame"
             title={"Color Blast"}
           />
           <GameList
             name={"portfolio__item item__pic3 wow"}
-            img={
-              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-            }
+            img={Fruit}
             route="/menjaGame"
             title={"Fruit Ninja"}
           />
           <GameList
             name={"portfolio__item item__pic4 wow"}
-            img={
-              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-            }
+            img={Snake}
             route="/snakeGame"
             title={"Eat snakes"}
           />
           <GameList
             name={"portfolio__item item__pic5 wow"}
-            img={
-              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-            }
+            img={TwoGame}
             route="/twoGame"
             title={"Two Game"}
           />
@@ -129,6 +124,7 @@ export default function AllGames() {
       </div>
 
       <Numbers />
+      <div className="space"></div>
       <ConnectUs />
     </>
   );

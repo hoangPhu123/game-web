@@ -69,6 +69,12 @@ export default function Header() {
                         <a href="#">Login</a>
                       </NavLink>
                     </li>
+
+                    <li className="sub__pages">
+                      <NavLink to="*">
+                        <a href="#">404 Page</a>
+                      </NavLink>
+                    </li>
                   </ul>
                 </li>
 

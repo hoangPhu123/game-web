@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../HomePages/Button";
+import errorImg from "../../assets/img/404.webp";
 import "../../assets/css/notFoundPage.css";
 
 function NotFoundPage() {
@@ -12,11 +13,8 @@ function NotFoundPage() {
           SORRY, this page is not found.
         </p>
       </div>
-      <div className="notFound__img mb-14">
-        <img
-          src="https://htmldemo.net/bonx/bonx/assets/img/others/404.webp"
-          alt=""
-        />
+      <div className="notFound__img">
+        <img src={errorImg} alt="" />
       </div>
       <div className="notFound__btn">
         <NavLink to="/">

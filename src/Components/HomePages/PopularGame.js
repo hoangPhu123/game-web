@@ -1,6 +1,10 @@
 import React from "react";
 import "../../assets/css/popularGame.css";
 import GameList from "./GameList";
+import colorBlastImg from "../../assets/img/colorblast.jpg";
+import Fruit from "../../assets/img/FruitNinja.jpg";
+import Caro from "../../assets/img/Caro.jpg";
+import TwoGame from "../../assets/img/2048.jpg";
 
 export default function PopularGame() {
   return (
@@ -17,33 +21,25 @@ export default function PopularGame() {
           <div className="gameList row">
             <GameList
               name={"portfolio__item item__pic1 wow"}
-              img={
-                "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-              }
+              img={Caro}
               route="/caroGame/room"
               title={"Caro Game"}
             />
             <GameList
               name={"portfolio__item item__pic2 wow"}
-              img={
-                "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-              }
+              img={colorBlastImg}
               route="/colorBlastGame"
               title={"Color Blast"}
             />
             <GameList
               name={"portfolio__item item__pic3 wow"}
-              img={
-                "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-              }
+              img={Fruit}
               route="/menjaGame"
               title={"Fruit Ninja"}
             />
             <GameList
               name={"portfolio__item item__pic4 wow"}
-              img={
-                "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
-              }
+              img={TwoGame}
               route="/twoGame"
               title={"Two Game"}
             />
