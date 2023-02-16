@@ -1,0 +1,91 @@
+// white color
+$white-color-1: #FFFFFF;
+
+// yellow color
+$yellow-color-1: #ffb300;
+
+// blue color
+$blue-color-1: #1de3eb;
+
+// purple color
+$purple-color-1: #b154f0;
+
+// pink color
+$pink-color-1: #f55f8d;
+
+// orange color 
+$orange-color-1: #df4c21;
+
+
+.number {
+    // background-image: url();
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 0 50px 130px;
+
+}
+
+.number__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    .number1 {
+        .countNumber{
+            color: $yellow-color-1;
+        }
+    }
+    
+    .number2 {
+        .countNumber{
+            color: $blue-color-1;
+        }
+    }
+    .number3 {
+        .countNumber{
+            color: $orange-color-1;
+        }
+    }
+    .number4 {
+        .countNumber{
+            color: $purple-color-1;
+        }
+    }
+}
+
+.number__item {
+    i {
+        background-image: linear-gradient(to right, $pink-color-1 0, $purple-color-1 51%, $yellow-color-1 100%);
+        color: $white-color-1;
+        background-size: 200%;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        margin-bottom: 15px;
+        border-radius: 50%;
+        font-size: 40px;
+        display: inline-block;
+    }
+
+    .countNumber {
+        font-size: 5rem;
+        line-height: 80px;
+        font-weight: 400;
+        font-family: "Metal Mania", cursive;
+    }
+
+    p:first-of-type {
+        color: $pink-color-1;
+        font-size: 4.1rem;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    p:last-of-type {
+        color: $white-color-1;
+        font-size: 1.3rem;
+    }
+}
+

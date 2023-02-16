@@ -1,0 +1,86 @@
+// white color 
+$white-color-1: #ffffff;
+
+// purple color 
+$purple-color-1: rgb(177, 84, 240,.5);
+
+.item__blog {
+    animation-name: fadeInUp;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
+    margin-bottom: 50px;
+
+    .itemBlog__left {
+        width: 200px;
+        a {
+            display: inline-block;
+            transition: all .3s ease 0s;
+            img {
+                width: 200px;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .itemBlog__right {
+        width: calc(100% - 200px);
+        padding-left: 35px;
+        text-align: left;
+
+        .itemRight__date {
+            margin-bottom: 10px;
+            span {
+                font-size: .9rem;
+                transition: all .2s ease .2s;
+                i {
+                    color: $purple-color-1;
+                }
+            }
+        }
+        h3 {
+            margin-bottom: 20px;
+            color: $white-color-1;
+            .h3_title {
+                display: inline-block;
+                font-size: 1.5rem;
+                line-height: 38px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: inherit;
+                line-height: inherit;
+                text-decoration: none;
+                transition: all .2s ease .2s;
+            }
+            &:hover {
+                color: $purple-color-1;
+            }
+        }
+        .readMore {
+            display: inline-block;
+            font-size: 1rem;
+            padding-left: 50px;
+            color: inherit;
+            line-height: inherit;
+            text-decoration: none;
+            color: $white-color-1;
+            position: relative;
+            transition: all 0.3s ease 0s;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 30px;
+                height: 2px;
+                background: $purple-color-1;
+                left: 0;
+                top: 50%;
+                transform: translatey(-50%);
+            }
+            &:hover {
+                color: $purple-color-1;
+            }
+        }
+
+
+    }
+
+}

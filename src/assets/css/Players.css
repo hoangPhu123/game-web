@@ -1,0 +1,137 @@
+.players__content {
+  margin-bottom: 125px;
+}
+.players__content .item__player {
+  margin-bottom: 50px;
+  -webkit-animation-name: fadeInLeft;
+          animation-name: fadeInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.players__content .item__player:hover .overplay {
+  visibility: visible;
+  opacity: 1;
+}
+.players__content .item__player:hover .itemBackground__button img:nth-child(1) {
+  opacity: 0;
+}
+.players__content .item__player:hover .itemBackground__button img:nth-child(2) {
+  opacity: 1;
+}
+
+.itemPlayer__title {
+  position: relative;
+  overflow: hidden;
+}
+.itemPlayer__title .avatar {
+  display: block;
+}
+.itemPlayer__title .avatar img {
+  border-radius: 38px;
+  width: 100%;
+}
+.itemPlayer__title .overplay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  border: 6px solid rgba(255, 255, 255, 0.4);
+  border-radius: 38px;
+  transform: translate(-50%, -50%) scale(0.97);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.itemPlayer__title .overplay .social-link {
+  position: absolute;
+  font-size: 24px;
+  bottom: 40px;
+}
+.itemPlayer__title .overplay .social-link a {
+  color: #FFFFFF;
+  margin-right: 45px;
+  transform: translateY(40px);
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+.itemPlayer__title .overplay .social-link a i {
+  font-size: 1.3rem;
+}
+.itemPlayer__title .overplay .social-link a::before, .itemPlayer__title .overplay .social-link a::after {
+  width: 48px;
+  height: 39px;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.itemPlayer__title .overplay .social-link a::before {
+  background-image: url(https://htmldemo.net/bonx/bonx/assets/img/icon/navigation-bg3.webp);
+  opacity: 1;
+}
+.itemPlayer__title .overplay .social-link a::after {
+  background-image: url(https://htmldemo.net/bonx/bonx/assets/img/icon/navigation-bg4.webp);
+  opacity: 0;
+}
+.itemPlayer__title .overplay .social-link a:hover::before {
+  opacity: 0;
+}
+.itemPlayer__title .overplay .social-link a:hover::after {
+  opacity: 1;
+}
+
+.itemPlayer__content {
+  position: relative;
+  margin-top: 25px;
+  padding: 27px 20px;
+  text-align: center;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.itemPlayer__content h4.itemContent__title a {
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  line-height: 38px;
+  font-weight: 700;
+}
+.itemPlayer__content h4.itemContent__title a:hover {
+  text-decoration: none;
+}
+.itemPlayer__content h5 {
+  font-size: 1rem;
+  line-height: 18px;
+}
+.itemPlayer__content .itemBackground__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+.itemPlayer__content .itemBackground__button img {
+  width: 100%;
+  height: 126px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.itemPlayer__content .itemBackground__button img:nth-child(1) {
+  opacity: 1;
+}
+.itemPlayer__content .itemBackground__button img:nth-child(2) {
+  opacity: 0;
+}/*# sourceMappingURL=Players.css.map */

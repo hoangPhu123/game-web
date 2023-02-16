@@ -1,0 +1,75 @@
+@import "../../assets/scss/color.scss";
+
+.aboutUsPage {
+    margin-bottom: 120px;
+}
+
+.aboutUsPage__content {
+    margin-bottom: 100px;
+}
+
+.itemAboutPage__left {
+    .aboutImage {
+        margin-right: 40px;
+        animation: fadeInUp;
+        animation-duration: 1s;
+        animation-delay: 0.2s;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.itemAboutPage__right {
+    animation: fadeInUp;
+    animation-duration: 1.2s;
+    animation-delay: 0.2s;
+
+    #aboutPage__title {
+        h5 {
+            position: relative;
+            font-size: 1.4rem;
+            line-height: 32px;
+            font-weight: 600;
+            padding-left: 98px;
+            margin-bottom: 25px;
+            color: $purple-color-4;
+    
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 68px;
+                height: 5px;
+                background: $purple-color-4;
+            }
+        }
+    
+        h2 {
+            font-size: 3.4rem;
+            line-height: 70px;
+            font-weight: 700;
+            margin-bottom: 26px;
+            text-transform: uppercase;
+            color: $white-color-1;
+        }
+    }
+
+    #aboutPage__desc {
+        margin-bottom: 40px;
+
+        p {
+            margin-bottom: 22px;
+            color: $white-color-2;
+        }
+    }
+
+}
+
+#btnAbout {
+    font-size: 1.7rem;
+    padding: 20px 60px;
+}

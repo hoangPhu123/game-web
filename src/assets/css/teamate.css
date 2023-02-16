@@ -1,0 +1,98 @@
+.game__team {
+  margin-bottom: 140px;
+}
+
+.team__title {
+  margin-bottom: 60px;
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.team__title h2 {
+  font-size: 3.13rem;
+  line-height: 65px;
+}
+.team__title p {
+  font-size: 1.1rem;
+  line-height: 35px;
+  margin-top: 12px;
+  color: #FFFFFF;
+}
+
+.member {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.member .member__content {
+  position: relative;
+}
+.member .member__content a {
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+.member .member__content a img {
+  width: 100%;
+  height: auto;
+}
+.member .member__content .member__position {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: url(https://htmldemo.net/bonx/bonx/assets/img/others/tam-text-shape.webp);
+  background-size: cover;
+  background-position: center;
+  height: 122px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s;
+}
+.member .member__content .member__position h3 {
+  margin-bottom: 8px;
+}
+.member .member__content .member__position h3 a {
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  line-height: 38px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.member .member__content .member__position span {
+  color: rgb(176, 99, 224);
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+}
+
+.member__content:hover .member__position {
+  background: url(https://htmldemo.net/bonx/bonx/assets/img/others/tam-text-shape2.webp);
+  background-size: cover;
+}
+.member__content:hover .member__position h3 a {
+  text-decoration: none;
+}
+.member__content:hover .member__position span {
+  color: #FFFFFF;
+}
+
+.member__content:nth-child(1) {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.member__content:nth-child(2) {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 1.3s;
+          animation-duration: 1.3s;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}/*# sourceMappingURL=teamate.css.map */

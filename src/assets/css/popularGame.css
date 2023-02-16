@@ -1,0 +1,16 @@
+.popularGame {
+  margin-bottom: 140px;
+}
+
+.popularGame__title h2 {
+  font-size: 3.5rem;
+  line-height: 72px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.popularGame__title p {
+  font-size: 1.1rem;
+  line-height: 35px;
+  margin-top: 12px;
+}/*# sourceMappingURL=popularGame.css.map */

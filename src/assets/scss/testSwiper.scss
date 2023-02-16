@@ -1,0 +1,63 @@
+// gray color 
+$gray-color-1: rgba(255, 255, 255, 0.6);
+
+
+// blue color
+$blue-color-1: rgb(35, 105, 155, 0.8);
+$blue-color-2: #2c2c6c;
+$blue-color-3: rgb(77, 181, 255, 0.5);
+
+.testimonials__container {
+    width: 100%;
+    padding-bottom: 4rem;
+    border-radius: 2rem;
+}
+
+.testimonials {
+    background: $blue-color-2;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    user-select: none; /* to not allow user to select the text */
+    .client__avatar {
+        width: 5rem;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        border: 0.4rem solid $blue-color-1;
+        img {
+            width: 100%;
+        }
+    }
+    .client_review {
+        color: $gray-color-1;
+        font-weight: 300;
+        display: block;
+        width: 80%;
+        margin: 0.8rem auto 0;
+    }
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet-active {
+    background: $blue-color-3;
+}
+/* ====== for tablets(medium devices) =========*/
+
+@media screen and (max-width: 1024px) {
+    .testimonials__container {
+        width: 60%;
+}
+}
+
+/* ====== for mobile(small devices) =========*/
+
+@media screen and (max-width: 600px) {
+    .testimonials__container {
+        width: 90%;
+    }
+    .client_review {
+        width: 90%;
+    }
+}
+  

@@ -1,0 +1,164 @@
+footer {
+  background-color: rgba(14, 27, 31, 0.6);
+  background-image: url(https://samar-web.vercel.app/Samar/bg4.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: block;
+  height: auto;
+}
+
+.footer__bottom, .copyrights__content {
+  width: 80%;
+  margin: auto;
+}
+
+/* ===========================FOOTER_BOTTOM=========================  */
+.footer__bottom {
+  padding: 70px 0;
+}
+
+.footer__item {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.footer__item li {
+  padding: 10px 0;
+  list-style: none;
+  text-align: left;
+}
+.footer__item li a {
+  color: #636363;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.footer__item li a i {
+  margin-right: 10px;
+  color: #636363;
+}
+.footer__item li a:hover {
+  color: #FFFFFF;
+}
+.footer__item li a:hover i {
+  color: #FFFFFF;
+}
+
+/* Item contact (first)  */
+.itemFooter1 {
+  color: #FFFFFF;
+  margin-top: -20px;
+}
+.itemFooter1 a {
+  margin-left: -10px;
+  text-decoration: none;
+}
+.itemFooter1 a img {
+  padding-bottom: 7px;
+}
+.itemFooter1 a span {
+  font-size: 2rem;
+}
+.itemFooter1 .footer__contact li i {
+  font-size: 0.8rem;
+  background: linear-gradient(to right, rgb(155, 125, 175) 0, rgb(196, 125, 145) 51%, rgb(155, 125, 175) 100%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 15px;
+}
+.itemFooter1 .footer__contact li span {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.itemFooter1 .footer__contact li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+/* Other item  */
+.itemFooter h3 {
+  padding-bottom: 13px;
+  margin-bottom: 35px;
+  font-size: 1.5rem;
+  position: relative;
+  text-align: left;
+}
+
+.itemFooter h3::before {
+  background: linear-gradient(to right, rgb(155, 125, 175) 0, rgb(196, 125, 145) 51%, rgb(155, 125, 175) 100%);
+  background-size: 200%;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  height: 4px;
+  border-radius: 10px;
+}
+
+.itemFooter h3::after {
+  background: linear-gradient(to right, rgb(155, 125, 175) 0, rgb(196, 125, 145) 51%, rgb(155, 125, 175) 100%);
+  background-size: 200%;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 45px;
+  height: 4px;
+  border-radius: 10px;
+}
+
+.itemDetail {
+  padding-left: 60px;
+}
+
+/* Copy right apart  */
+.footer__copyrights {
+  color: #FFFFFF;
+  background: rgba(31, 52, 59, 0.5);
+  padding: 10px 0;
+  font-size: 0.9375rem;
+  position: relative;
+}
+
+.copyrights__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.copyrights__content .copyrights__left span {
+  color: rgb(155, 125, 175);
+}
+.copyrights__content .copyrights__right ul {
+  display: flex;
+}
+.copyrights__content .copyrights__right ul li {
+  background-color: rgba(255, 255, 255, 0.1);
+  list-style: none;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 3px;
+  transition: all 0.5s;
+}
+.copyrights__content .copyrights__right ul li a {
+  color: #FFFFFF;
+}
+.copyrights__content .copyrights__right ul li:hover {
+  background: rgb(196, 125, 145);
+}/*# sourceMappingURL=footer.css.map */

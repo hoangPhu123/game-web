@@ -1,0 +1,35 @@
+// white color 
+$white-color-1: #ffffff;
+
+.connect__withUs {
+    margin-bottom: 130px;
+}
+
+.withUs__content {
+    background-image: url(../img/gaming-update.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    padding: 0 100px;
+}
+
+.withUs__left {
+    h2 {
+        font-size: 3.5rem;
+        line-height: 72px;
+        font-weight: 700;
+        text-align: left;
+        color: $white-color-1;
+        text-transform: uppercase;
+    }
+
+}
+.withUs__right {
+    #btn__connectUs {
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding: 20px 20px;
+        text-transform: uppercase;
+    }
+}

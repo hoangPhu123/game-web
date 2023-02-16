@@ -1,0 +1,25 @@
+.blog {
+  margin-bottom: 90px;
+}
+
+.blog__title {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  padding-bottom: 50px;
+}
+.blog__title h2 {
+  font-size: 3.5rem;
+  line-height: 72px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.blog__title p {
+  font-size: 1.1rem;
+  line-height: 35px;
+  margin-top: 12px;
+}/*# sourceMappingURL=blog.css.map */

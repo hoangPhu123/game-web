@@ -1,0 +1,14 @@
+.testimonial {
+  margin-bottom: 130px;
+}
+.testimonial .testimonial__title p {
+  font-size: 1.3rem;
+  line-height: 35px;
+}
+.testimonial .testimonial__title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.testimonial .testimonial__detail {
+  margin-top: 35px;
+}/*# sourceMappingURL=Testimonial.css.map */

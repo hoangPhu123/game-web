@@ -1,0 +1,26 @@
+// white color 
+$white-color-1: #ffffff;
+
+
+.blog {
+    margin-bottom: 90px;
+}
+
+.blog__title {
+    animation-name: fadeInUp;
+    animation-delay: 0.2s;
+    animation-duration: 1s;
+    padding-bottom: 50px;
+    h2 {
+        font-size: 3.5rem;
+        line-height: 72px;
+        font-weight: 700;
+        color: $white-color-1;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1.1rem;
+        line-height: 35px;
+        margin-top: 12px;
+    }
+}

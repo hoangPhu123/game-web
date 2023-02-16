@@ -1,0 +1,39 @@
+.signIn__title {
+  background-image: url(https://htmldemo.net/bonx/bonx/assets/img/bg/breadcrumbs-bg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+}
+.signIn__title h1 {
+  font-size: 90px;
+  line-height: 90px;
+  font-family: "Metal Mania", cursive;
+  margin-bottom: 25px;
+  text-shadow: 3px 3px 0px rgb(155, 125, 175);
+}
+
+ul.location {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.location li {
+  font-size: 1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin-right: 5px;
+  color: rgb(155, 125, 175);
+}
+ul.location li:first-child a {
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+ul.location li:first-child a:hover {
+  color: rgb(155, 125, 175);
+  text-decoration: none;
+}/*# sourceMappingURL=locationHeader.css.map */

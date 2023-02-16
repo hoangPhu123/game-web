@@ -1,0 +1,54 @@
+.number {
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 0 50px 130px;
+}
+
+.number__content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.number__content .number1 .countNumber {
+  color: #ffb300;
+}
+.number__content .number2 .countNumber {
+  color: #1de3eb;
+}
+.number__content .number3 .countNumber {
+  color: #df4c21;
+}
+.number__content .number4 .countNumber {
+  color: #b154f0;
+}
+
+.number__item i {
+  background-image: linear-gradient(to right, #f55f8d 0, #b154f0 51%, #ffb300 100%);
+  color: #FFFFFF;
+  background-size: 200%;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  font-size: 40px;
+  display: inline-block;
+}
+.number__item .countNumber {
+  font-size: 5rem;
+  line-height: 80px;
+  font-weight: 400;
+  font-family: "Metal Mania", cursive;
+}
+.number__item p:first-of-type {
+  color: #f55f8d;
+  font-size: 4.1rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.number__item p:last-of-type {
+  color: #FFFFFF;
+  font-size: 1.3rem;
+}/*# sourceMappingURL=numbers.css.map */

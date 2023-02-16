@@ -1,0 +1,64 @@
+.service {
+  background-size: cover;
+  background-position: top center;
+  text-align: center;
+  margin-bottom: 140px;
+}
+
+.service__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service__title {
+  color: #FFFFFF;
+  padding-bottom: 10px;
+}
+.service__title p {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.service__title h2 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.service__item {
+  border-radius: 10px;
+  padding: 55px 40px 50px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+.service__item img {
+  width: 180px;
+}
+.service__item h3 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  margin: 17px 0;
+}
+.service__item p {
+  word-wrap: break-word;
+  line-height: 1.7;
+}
+.service__item:hover {
+  transform: translateY(-20px);
+}
+
+.item1 {
+  background-image: url(https://htmldemo.net/bonx/bonx/assets/img/others/gaming-world-bg1.webp);
+}
+
+.item2 {
+  background-image: url(https://htmldemo.net/bonx/bonx/assets/img/others/gaming-world-bg2.webp);
+}
+
+.item3 {
+  background-image: url(https://htmldemo.net/bonx/bonx/assets/img/others/gaming-world-bg3.webp);
+}/*# sourceMappingURL=service.css.map */

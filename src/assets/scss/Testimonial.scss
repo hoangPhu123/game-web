@@ -1,0 +1,16 @@
+.testimonial {
+    margin-bottom: 130px;
+    .testimonial__title {
+        p{
+            font-size: 1.3rem;
+            line-height: 35px
+        }
+        h2{
+            font-size: 3rem;
+            font-weight: 700;
+        }
+    }
+    .testimonial__detail{
+        margin-top: 35px;
+    }
+}

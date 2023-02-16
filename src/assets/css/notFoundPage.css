@@ -1,0 +1,21 @@
+.notFoundPage__content {
+  padding: 35px 0 30px;
+}
+
+.notFound__img {
+  width: 70%;
+}
+.notFound__img img {
+  width: 100%;
+  height: auto;
+  transform: translateX(20%);
+}
+
+#btn__notFound {
+  width: 230px;
+  height: 73px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 73px;
+  padding: 0 15px;
+}/*# sourceMappingURL=notFoundPage.css.map */

@@ -1,0 +1,107 @@
+@import "../../assets/scss/color.scss";
+
+.game__team {
+    margin-bottom: 140px;
+}
+
+.team__title {
+    margin-bottom: 60px;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+
+    h2 {
+        font-size: 3.13rem;
+        line-height: 65px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 35px;
+        margin-top: 12px;
+        color: $white-color-1;
+    }
+}
+
+.member {
+    padding-right: 25px;
+    padding-left: 25px;
+
+    .member__content {
+        position: relative;
+    
+        a {
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+    
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    
+        .member__position {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background: url(https://htmldemo.net/bonx/bonx/assets/img/others/tam-text-shape.webp);
+            background-size: cover;
+            background-position: center;
+            height: 122px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: 0.3s;
+    
+            h3 {
+                margin-bottom: 8px;
+    
+                a {
+                    color: $white-color-1;
+                    font-size: 1.6rem;
+                    line-height: 38px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+    
+            span {
+                color: $purple-color-4;
+                transition: all 0.3s ease 0s;
+                display: inline-block;
+            }
+        }
+    }
+
+}
+
+.member__content {
+    &:hover .member__position {
+        background: url(https://htmldemo.net/bonx/bonx/assets/img/others/tam-text-shape2.webp);
+        background-size: cover;
+
+        h3 {
+            a {
+                text-decoration: none;
+            }
+        }
+
+        span {
+            color: $white-color-1;
+        }
+    }
+}
+
+.member__content:nth-child(1) {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+}
+
+.member__content:nth-child(2) {
+    animation-name: fadeInUp;
+    animation-duration: 1.3s;
+    animation-delay: 0.4s;
+}

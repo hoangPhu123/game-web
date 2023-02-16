@@ -1,0 +1,115 @@
+.gameList__content {
+  margin-top: 30px;
+}
+.gameList__content .portfolio__item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.gameList__content .portfolio__item img {
+  width: 100%;
+  height: 100%;
+}
+.gameList__content .portfolio__item .overplay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  opacity: 0;
+  transition: all 0.75s;
+}
+.gameList__content:hover .overplay {
+  opacity: 1;
+  border-radius: 35px;
+}
+.gameList__content .item__pic1 {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+.gameList__content .item__pic2 {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+.gameList__content .item__pic3 {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.gameList__content .item__pic4 {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.portfolio__item::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: block;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.75s;
+}
+
+.portfolio__item:hover::before {
+  left: 125%;
+}
+
+.portfolio__item .folio__icon {
+  background: linear-gradient(to right, #f55f8d 0, #b154f0 51%, #f8ae56 100%);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  line-height: 60px;
+  background-size: 200%;
+  border-radius: 10px;
+  transform: translate(20px, -20px);
+  transition: all 0.75s;
+}
+.portfolio__item .folio__icon a {
+  cursor: pointer;
+}
+.portfolio__item .folio__icon a i {
+  color: #FFFFFF;
+  font-family: "Line Awesome Free";
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.portfolio__item:hover .folio__icon {
+  transform: translate(0);
+}
+.portfolio__item .folio__text {
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 35px;
+  left: 25px;
+  text-align: left;
+  transform: translate(0, 85px);
+  transition: all 0.75s;
+}
+.portfolio__item .folio__text h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  padding-bottom: 7px;
+}
+.portfolio__item .folio__text p {
+  opacity: 0.7;
+}
+.portfolio__item:hover .folio__text {
+  transform: translate(0);
+}/*# sourceMappingURL=gameList.css.map */

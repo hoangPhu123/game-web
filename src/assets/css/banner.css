@@ -1,0 +1,36 @@
+.banner {
+  background-image: url("https://htmldemo.net/bonx/bonx/assets/img/bg/hero-bg1.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 940px;
+  padding-top: 210px;
+  position: relative;
+}
+
+.banner__content {
+  width: 100%;
+}
+.banner__content .banner__title {
+  position: relative;
+  z-index: 9;
+}
+.banner__content .banner__title h1 {
+  font-size: 120px;
+  line-height: 120px;
+  text-transform: uppercase;
+  font-family: "Metal Mania", cursive;
+  color: #fff;
+  text-shadow: 3px 3px 0px #b154f0;
+}
+.banner__content .banner__title p {
+  padding-top: 20px;
+}
+
+#btnPlay {
+  font-size: 3rem;
+  font-family: "Metal Mania", cursive;
+  letter-spacing: 3px;
+  padding: 0 60px;
+  margin-top: 20px;
+}/*# sourceMappingURL=banner.css.map */
