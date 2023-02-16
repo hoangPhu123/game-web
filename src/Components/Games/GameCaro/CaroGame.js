@@ -11,18 +11,16 @@ import {
   playTurn,
   subscribeJoinRoom,
   startGame,
-  subscribeStartGame
+  subscribeStartGame,
 } from "../../../service/socketio.service";
 
-
-const userLocal = JSON.parse(localStorage.getItem('USER_LOCAL'));
+const userLocal = JSON.parse(localStorage.getItem("USER_LOCAL"));
 const curentUserId = userLocal?.user?.id;
 
 const SENDER = {
   id: curentUserId,
-  name: userLocal?.user?.name
+  name: userLocal?.user?.name,
 };
-
 
 const GAME_STATE = {
   PLAYER_TURN: "player_turn",
@@ -43,8 +41,7 @@ export const GRID_LENGTH = 9;
 const MAX_MOVES = 10;
 
 const getGameStatus = (gameState, isPlayer1) => {
-
-  console.log(isPlayer1,'isPlayer1');
+  console.log(isPlayer1, "isPlayer1");
   switch (gameState) {
     case GAME_STATE.PLAYER_TURN: {
       return "Your Turn";
@@ -53,10 +50,10 @@ const getGameStatus = (gameState, isPlayer1) => {
       return "";
     }
     case GAME_STATE.PLAYER_WON: {
-      return isPlayer1 ? "You Won!" : 'You Loss!';
+      return isPlayer1 ? "You Won!" : "You Loss!";
     }
     case GAME_STATE.AI_WON: {
-      return !isPlayer1 ? "You Won!" : 'You Loss!';
+      return !isPlayer1 ? "You Won!" : "You Loss!";
     }
     case GAME_STATE.DRAW: {
       return "Draw";
@@ -176,7 +173,6 @@ export default function CaroGame() {
   // Current game state
   const [gameState, setGameState] = useState(GAME_STATE.PLAYER_TURN);
 
-
   // Whenever the game state changes
   // from player interaction,
   // we handle logic flow in
@@ -184,11 +180,10 @@ export default function CaroGame() {
 
   const [gameStatus, setGameStatus] = useState(null);
 
-
   useEffect(() => {
-    let params = (new URL(document.location)).searchParams;
-    let token = params.get('token');
-    let roomId = params.get('roomId');
+    let params = new URL(document.location).searchParams;
+    let token = params.get("token");
+    let roomId = params.get("roomId");
     submitToken(token);
     setRoom(roomId);
     joinRoom(roomId);
@@ -197,8 +192,7 @@ export default function CaroGame() {
         setGameStatus(data);
       });
     }, 2000);
-
-  }, [])
+  }, []);
 
   useEffect(() => {
     // Player took turn,
@@ -250,12 +244,12 @@ export default function CaroGame() {
   useEffect(() => {
     if (!gameStatus) return;
     setIsPlayer1(gameStatus.player1 === curentUserId || false);
-  }, [gameStatus])
+  }, [gameStatus]);
 
   // Fill in the grid array with the player space state.
   const handlePlayerClick = (gridIndex) => {
     if (!gameStatus || !gameStatus.playing) {
-      window.alert("please wait player ...")
+      window.alert("please wait player ...");
       return;
     }
     if (gameState !== GAME_STATE.PLAYER_TURN) {
@@ -267,22 +261,25 @@ export default function CaroGame() {
       setMoveCount((oldMoves) => {
         return oldMoves + 1;
       });
-      playTurn({ message: {gridIndex: gridIndex, isPlayer1 }, roomName: room }, cb => {
-        // callback is acknowledgement from server
-        console.log(cb, 'cb');
-      });
-
-
+      playTurn(
+        { message: { gridIndex: gridIndex, isPlayer1 }, roomName: room },
+        (cb) => {
+          // callback is acknowledgement from server
+          console.log(cb, "cb");
+        }
+      );
     }
   };
 
   const checkTypeSquareRealtime = (isPlayer1) => {
-    console.log(isPlayer1,'checkTypeSquareRealtime');
+    console.log(isPlayer1, "checkTypeSquareRealtime");
     if (!isPlayer1) {
-      return SPACE_STATE.AI
+      return SPACE_STATE.AI;
     }
-    if (isPlayer1) { return SPACE_STATE.PLAYER }
-  }
+    if (isPlayer1) {
+      return SPACE_STATE.PLAYER;
+    }
+  };
 
   const Square = (props) => {
     return (
@@ -305,14 +302,14 @@ export default function CaroGame() {
     );
   };
 
-  const [token, setToken] = useState('');
-  const [room, setRoom] = useState('');
+  const [token, setToken] = useState("");
+  const [room, setRoom] = useState("");
   const [messages, setMessages] = useState([]);
 
   // eslint-disable-next-line no-undef
-  const tokenInputRef = useRef('');
+  const tokenInputRef = useRef("");
   // eslint-disable-next-line no-undef
-  const inputRef = useRef('');
+  const inputRef = useRef("");
 
   useEffect(() => {
     if (token) {
@@ -321,11 +318,11 @@ export default function CaroGame() {
       // subscribeJoinRoom
 
       subscribeJoinRoom((err, data) => {
-        console.log(data, 'subscribeJoinRoom');
+        console.log(data, "subscribeJoinRoom");
       });
       subscribeToMessages((err, data) => {
         console.log(data);
-        setMessages(prev => [...prev, data]);
+        setMessages((prev) => [...prev, data]);
       });
 
       subscribeStartGame((err, data) => {
@@ -334,52 +331,58 @@ export default function CaroGame() {
       });
 
       subscribeToPlayTurn((err, data) => {
-        console.log(data, 'subscribeToPlayTurn');
-        fillGridSpace(data.message?.gridIndex, checkTypeSquareRealtime(data.message?.isPlayer1));
-          setGameState(GAME_STATE.PLAYER_TURN);
+        console.log(data, "subscribeToPlayTurn");
+        fillGridSpace(
+          data.message?.gridIndex,
+          checkTypeSquareRealtime(data.message?.isPlayer1)
+        );
+        setGameState(GAME_STATE.PLAYER_TURN);
       });
       return () => {
         disconnectSocket();
-      }
+      };
     }
   }, [token]);
 
   const submitToken = (tokenValue) => {
-    const token = JSON.parse(localStorage.getItem('USER_LOCAL'))?.tokens?.access?.token;
-    console.log(token, 'token');
+    const token = JSON.parse(localStorage.getItem("USER_LOCAL"))?.tokens?.access
+      ?.token;
+    console.log(token, "token");
     setToken(token);
-  }
+  };
 
   const CHAT_ROOM = "myRandomChatRoomId";
 
   const submitMessage = (e) => {
     e.preventDefault();
     const message = inputRef.current.value;
-    sendMessage({ message, roomName: room }, cb => {
+    sendMessage({ message, roomName: room }, (cb) => {
       // callback is acknowledgement from server
-      setMessages(prev => [...prev, {
-        message,
-        ...SENDER
-      }]
-      );
+      setMessages((prev) => [
+        ...prev,
+        {
+          message,
+          ...SENDER,
+        },
+      ]);
       // clear the input after the message is sent
-      inputRef.current.value = '';
+      inputRef.current.value = "";
     });
-  }
-
-
+  };
 
   return (
     <>
       <section className="game-board">
         <div className="text-center py-2 shadow-sm text-white text-5xl font-medium z-50 sticky mb-4">
-          <h4 style={{marginBottom: 14}}>
+          <h4 style={{ marginBottom: 14 }}>
             {getGameStatus(gameState, isPlayer1)}
           </h4>
-          {!gameStatus ? 'loading ...' : (
+          {!gameStatus ? (
+            "loading ..."
+          ) : (
             <ul>
-              <li>Game play: {gameStatus.playing ? '2 / 2' : '1 / 2'}</li>
-              <li>Status:  {gameStatus.playing ? 'gaming' : 'pending'}</li>
+              <li>Game play: {gameStatus.playing ? "2 / 2" : "1 / 2"}</li>
+              <li>Status: {gameStatus.playing ? "gaming" : "pending"}</li>
             </ul>
           )}
         </div>
@@ -437,31 +440,30 @@ export default function CaroGame() {
         </div>
       </section>
 
-      <div class="center">
-        <div class="chat">
-          <div class="messages" id="chat">
-            {
-              messages.map((user, index) =>
-                <div
-                  key={index}
-                  className={user.id === curentUserId ? 'message parker' : 'message stark'}
-                >
-                  {user.name}: {user.message}
-                </div>)
-            }
+      <div className="center">
+        <div className="chat">
+          <div className="messages" id="chat">
+            {messages.map((user, index) => (
+              <div
+                key={index}
+                className={
+                  user.id === curentUserId ? "message parker" : "message stark"
+                }
+              >
+                {user.name}: {user.message}
+              </div>
+            ))}
           </div>
           <form className="input-div" onSubmit={submitMessage}>
-            <div class="input">
+            <div className="input">
               <input type="text" placeholder="Type in text" ref={inputRef} />
               <button type="submit">
-                <i class="fa-regular fa-paper-plane"></i>
+                <i className="fa-regular fa-paper-plane"></i>
               </button>
             </div>
           </form>
-
         </div>
       </div>
-
     </>
     //   <form onSubmit={submitToken}>
     //   <input type="text" placeholder="Enter token" ref={tokenInputRef} />
