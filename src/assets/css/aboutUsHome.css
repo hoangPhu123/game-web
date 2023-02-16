@@ -14,12 +14,9 @@
   position: absolute;
   left: -17%;
   width: 60%;
-  -webkit-animation-name: fadeInLeft;
-          animation-name: fadeInLeft;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-name: fadeInLeft;
+  animation-duration: 2s;
+  animation-delay: 0.2s;
 }
 .about__left img {
   width: 100%;
@@ -28,12 +25,9 @@
 
 .about__right {
   width: 50%;
-  -webkit-animation-name: fadeInRight;
-          animation-name: fadeInRight;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-name: fadeInRight;
+  animation-duration: 2s;
+  animation-delay: 0.2s;
 }
 .about__right p {
   margin-bottom: 15px;

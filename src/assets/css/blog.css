@@ -3,12 +3,9 @@
 }
 
 .blog__title {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-name: fadeInUp;
+  animation-delay: 0.2s;
+  animation-duration: 1s;
   padding-bottom: 50px;
 }
 .blog__title h2 {

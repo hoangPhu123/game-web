@@ -1,10 +1,7 @@
 .item__blog {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-name: fadeInUp;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
   margin-bottom: 50px;
 }
 .item__blog .itemBlog__left {

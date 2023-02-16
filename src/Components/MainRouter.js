@@ -91,6 +91,7 @@ const MainRouter = () => (
       <Route path="/caroGame" element={<CaroGame />} />
       <Route path="/caroGame/room" element={<RoomsPage />} />
       <Route path="/colorBlastGame" element={<ColorBlast />} />
+      {/* mistake coloronGame  */}
       <Route path="/coloronGame" element={<Coloron />} />
       <Route path="/menjaGame" element={<Menja />} />
       <Route path="/snakeGame" element={<SNAKE />} />

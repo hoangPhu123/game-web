@@ -91,6 +91,39 @@ export default function AllGames() {
               "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
             }
             route="/caroGame/room"
+            title={"Caro Game Online"}
+          />
+          <GameList
+            name={"portfolio__item item__pic2 wow"}
+            img={
+              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
+            }
+            route="/colorBlastGame"
+            title={"Color Blast"}
+          />
+          <GameList
+            name={"portfolio__item item__pic3 wow"}
+            img={
+              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
+            }
+            route="/menjaGame"
+            title={"Fruit Ninja"}
+          />
+          <GameList
+            name={"portfolio__item item__pic4 wow"}
+            img={
+              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
+            }
+            route="/snakeGame"
+            title={"Eat snakes"}
+          />
+          <GameList
+            name={"portfolio__item item__pic5 wow"}
+            img={
+              "https://htmldemo.net/bonx/bonx/assets/img/others/popular-game-thumb1.webp"
+            }
+            route="/twoGame"
+            title={"Two Game"}
           />
         </div>
       </div>

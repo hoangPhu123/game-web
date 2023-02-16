@@ -4,12 +4,9 @@
 
 .team__title {
   margin-bottom: 60px;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
 }
 .team__title h2 {
   font-size: 3.13rem;
@@ -80,19 +77,13 @@
 }
 
 .member__content:nth-child(1) {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
 }
 
 .member__content:nth-child(2) {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-duration: 1.3s;
-          animation-duration: 1.3s;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-name: fadeInUp;
+  animation-duration: 1.3s;
+  animation-delay: 0.4s;
 }/*# sourceMappingURL=teamate.css.map */

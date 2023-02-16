@@ -1,0 +1,44 @@
+@import "../../assets/scss/color.scss";
+
+.signIn__title {
+  background-image: url(https://htmldemo.net/bonx/bonx/assets/img/bg/breadcrumbs-bg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+
+  h1 {
+    font-size: 90px;
+    line-height: 90px;
+    font-family: "Metal Mania", cursive;
+    margin-bottom: 25px;
+    text-shadow: 3px 3px 0px $purple-color-1;
+  }
+}
+
+ul.location {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    font-size: 1rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-right: 5px;
+    color: $purple-color-1;
+
+    &:first-child a {
+      color: $white-color-1;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        color: $purple-color-1;
+        text-decoration: none;
+      }
+    }
+  }
+}

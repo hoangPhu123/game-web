@@ -1,9 +1,9 @@
 // white color
-$white-color-1: #FFFFFF;
+$white-color-1: #ffffff;
 
 // black color
 $black-color-1: rgba(255, 255, 255, 0);
-$black-color-2: rgba(0, 0, 0, .4);
+$black-color-2: rgba(0, 0, 0, 0.4);
 
 // gray color
 $gray-color-1: rgba(255, 255, 255, 0.3);
@@ -14,119 +14,128 @@ $purple-color-1: #b154f0;
 // pink color
 $pink-color-1: #f55f8d;
 
-// yellow color 
+// yellow color
 $yellow-color-1: #f8ae56;
 
 .gameList__content {
-    margin-top: 30px;
-    .portfolio__item {
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-        img {
-            width: 100%;
-            height: 100%;
-        }
-        .overplay {
-            background-color: $black-color-2;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 35px;
-            opacity: 0;
-            transition: all .75s;
-        }
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .portfolio__item {
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
     }
-    &:hover .overplay {
-        opacity: 1;
-        border-radius: 35px;
+    .overplay {
+      background-color: $black-color-2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 35px;
+      opacity: 0;
+      transition: all 0.75s;
     }
+  }
+  &:hover .overplay {
+    opacity: 1;
+    border-radius: 35px;
+  }
 
-    .item__pic1 {
-        animation-name: fadeInUp;
-        animation-duration: 2s;
-    }
-    .item__pic2 {
-        animation-name: fadeInUp;
-        animation-duration: 3s;
-    }
-    .item__pic3 {
-        animation-name: fadeInUp;
-        animation-duration: 4s;
-    }
-    .item__pic4 {
-        animation-name: fadeInUp;
-        animation-duration: 5s;
-    }
-
+  .item__pic1 {
+    animation-name: fadeInUp;
+    animation-duration: 2s;
+  }
+  .item__pic2 {
+    animation-name: fadeInUp;
+    animation-duration: 3s;
+  }
+  .item__pic3 {
+    animation-name: fadeInUp;
+    animation-duration: 4s;
+  }
+  .item__pic4 {
+    animation-name: fadeInUp;
+    animation-duration: 5s;
+  }
+  .item__pic5 {
+    animation-name: fadeInUp;
+    animation-duration: 6s;
+  }
 }
 .portfolio__item::before {
-    content: "";
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    display: block;
-    background: linear-gradient(to right, $black-color-1 0%, $gray-color-1 100%);
-    transform: skewX(-25deg);
-    transition: all 0.75s;
+  content: "";
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: block;
+  background: linear-gradient(to right, $black-color-1 0%, $gray-color-1 100%);
+  transform: skewX(-25deg);
+  transition: all 0.75s;
 }
 .portfolio__item:hover::before {
-    left: 125%;
+  left: 125%;
 }
 
-
 .portfolio__item {
-    .folio__icon {
-        background: linear-gradient(to right, $pink-color-1 0, $purple-color-1 51%, $yellow-color-1 100%);
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        height: 50px;
-        width: 50px;
-        line-height: 60px;
-        background-size: 200%;
-        border-radius: 10px;
-        transform: translate(20px, -20px);
-        transition: all .75s;
+  .folio__icon {
+    background: linear-gradient(
+      to right,
+      $pink-color-1 0,
+      $purple-color-1 51%,
+      $yellow-color-1 100%
+    );
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    line-height: 60px;
+    background-size: 200%;
+    border-radius: 10px;
+    transform: translate(20px, -20px);
+    transition: all 0.75s;
 
-        a {
-            cursor: pointer;
-            i {
-                color: $white-color-1;
-                font-family: "Line Awesome Free";
-                margin-bottom: 10px;
-                font-size: 2rem;
-                font-weight: 700;
-            }
-        }
-    }
-    &:hover .folio__icon {
-        transform: translate(0);
-    }
-
-    .folio__text {
+    a {
+      cursor: pointer;
+      i {
         color: $white-color-1;
-        position: absolute;
-        bottom: 35px;
-        left: 25px;
-        text-align: left;
-        transform: translate(0, 85px);
-        transition: all .75s;
-        h3 {
-            font-size: 1.375rem;
-            font-weight: 700;
-            padding-bottom: 7px;
-        }
-        p {
-            opacity: .7;
-        }
+        font-family: "Line Awesome Free";
+        margin-bottom: 10px;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+  }
+  &:hover .folio__icon {
+    transform: translate(0);
+  }
 
+  .folio__text {
+    color: $white-color-1;
+    position: absolute;
+    bottom: 35px;
+    left: 25px;
+    text-align: left;
+    transform: translate(0, 85px);
+    transition: all 0.75s;
+    h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      padding-bottom: 7px;
     }
-    &:hover .folio__text {
-        transform: translate(0);
+    p {
+      opacity: 0.7;
     }
+  }
+  &:hover .folio__text {
+    transform: translate(0);
+  }
 }

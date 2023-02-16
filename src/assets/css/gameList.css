@@ -1,8 +1,11 @@
 .gameList__content {
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .gameList__content .portfolio__item {
-  border-radius: 10px;
+  border-radius: 35px;
   overflow: hidden;
   position: relative;
 }
@@ -26,33 +29,29 @@
   border-radius: 35px;
 }
 .gameList__content .item__pic1 {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  animation-name: fadeInUp;
+  animation-duration: 2s;
 }
 .gameList__content .item__pic2 {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-name: fadeInUp;
+  animation-duration: 3s;
 }
 .gameList__content .item__pic3 {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
+  animation-name: fadeInUp;
+  animation-duration: 4s;
 }
 .gameList__content .item__pic4 {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  animation-name: fadeInUp;
+  animation-duration: 5s;
+}
+.gameList__content .item__pic5 {
+  animation-name: fadeInUp;
+  animation-duration: 6s;
 }
 
 .portfolio__item::before {
   content: "";
-  width: 50%;
+  width: 60%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -84,7 +83,7 @@
   cursor: pointer;
 }
 .portfolio__item .folio__icon a i {
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: "Line Awesome Free";
   margin-bottom: 10px;
   font-size: 2rem;
@@ -94,7 +93,7 @@
   transform: translate(0);
 }
 .portfolio__item .folio__text {
-  color: #FFFFFF;
+  color: #ffffff;
   position: absolute;
   bottom: 35px;
   left: 25px;

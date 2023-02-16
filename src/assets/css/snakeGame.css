@@ -32,7 +32,6 @@
 .noselect {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -64,7 +63,7 @@
     margin-bottom: 20px;
   }
   #replay,
-h2 {
+  h2 {
     transform: rotate(0deg);
   }
   #ui {

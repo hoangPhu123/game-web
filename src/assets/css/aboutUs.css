@@ -8,12 +8,9 @@
 
 .itemAboutPage__left .aboutImage {
   margin-right: 40px;
-  -webkit-animation: fadeInUp;
-          animation: fadeInUp;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation: fadeInUp;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
 }
 .itemAboutPage__left .aboutImage img {
   width: 100%;
@@ -21,12 +18,9 @@
 }
 
 .itemAboutPage__right {
-  -webkit-animation: fadeInUp;
-          animation: fadeInUp;
-  -webkit-animation-duration: 1.2s;
-          animation-duration: 1.2s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation: fadeInUp;
+  animation-duration: 1.2s;
+  animation-delay: 0.2s;
 }
 .itemAboutPage__right #aboutPage__title h5 {
   position: relative;

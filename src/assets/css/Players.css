@@ -3,12 +3,9 @@
 }
 .players__content .item__player {
   margin-bottom: 50px;
-  -webkit-animation-name: fadeInLeft;
-          animation-name: fadeInLeft;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-name: fadeInLeft;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
 }
 .players__content .item__player:hover .overplay {
   visibility: visible;

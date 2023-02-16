@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import "../../assets/css/locationHeader.css";
 
 export default function LocationHeader({ title, location }) {
-  // let { title, location } = this.props;
   return (
     <>
       <div className="signIn__title text-center">

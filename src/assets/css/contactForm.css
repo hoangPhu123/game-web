@@ -28,9 +28,6 @@ input#register_email:focus, input#register_username:focus, input#register_phone:
 input#register_email::-moz-placeholder, input#register_username::-moz-placeholder, input#register_phone::-moz-placeholder {
   color: #FFFFFF;
 }
-input#register_email:-ms-input-placeholder, input#register_username:-ms-input-placeholder, input#register_phone:-ms-input-placeholder {
-  color: #FFFFFF;
-}
 input#register_email::placeholder, input#register_username::placeholder, input#register_phone::placeholder {
   color: #FFFFFF;
 }
@@ -51,9 +48,6 @@ textarea#register_intro:focus {
   border-color: rgba(177, 84, 240, 0.5);
 }
 textarea#register_intro::-moz-placeholder {
-  color: #FFFFFF;
-}
-textarea#register_intro:-ms-input-placeholder {
   color: #FFFFFF;
 }
 textarea#register_intro::placeholder {

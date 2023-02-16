@@ -187,11 +187,6 @@ ul.location li:first-child a:hover {
   font-size: 1rem;
   font-weight: 500;
 }
-#register_username:-ms-input-placeholder {
-  color: #FFFFFF;
-  font-size: 1rem;
-  font-weight: 500;
-}
 #register_username::placeholder {
   color: #FFFFFF;
   font-size: 1rem;
@@ -225,11 +220,6 @@ ul.location li:first-child a:hover {
   font-size: 1rem;
   font-weight: 500;
 }
-.ant-input-password:-ms-input-placeholder {
-  color: #FFFFFF;
-  font-size: 1rem;
-  font-weight: 500;
-}
 .ant-input-password::placeholder {
   color: #FFFFFF;
   font-size: 1rem;
@@ -248,9 +238,6 @@ ul.location li:first-child a:hover {
   color: #FFFFFF;
 }
 .ant-input-affix-wrapper > input.ant-input::-moz-placeholder {
-  color: #FFFFFF;
-}
-.ant-input-affix-wrapper > input.ant-input:-ms-input-placeholder {
   color: #FFFFFF;
 }
 .ant-input-affix-wrapper > input.ant-input::placeholder {

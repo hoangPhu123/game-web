@@ -19,7 +19,6 @@
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .hud__score .cube-count-lbl {
@@ -127,7 +126,6 @@
   align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
@@ -189,7 +187,6 @@
   outline: none;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   font-family: monospace;
   font-weight: bold;

@@ -114,11 +114,3 @@ ul.sub_menu .sub__pages a:hover {
   opacity: 1;
   top: 132%;
 }/*# sourceMappingURL=header.css.map */
-
-.ant-message-notice-content .ant-message-success span{
-  color: green;
-}
-
-.ant-message-notice-content .ant-message-error span{
-  color: red;
-}

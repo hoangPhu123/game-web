@@ -136,12 +136,6 @@
   background: #C0392B;
   z-index: 1;
 }
-
-@-webkit-keyframes timer {
-  100% {
-    width: 100%;
-  }
-}
 @keyframes timer {
   100% {
     width: 100%;
