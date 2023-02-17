@@ -10,6 +10,10 @@ import { postLogin } from "../../service/userService";
 import { userLocalService } from "../../service/localService";
 import Lottie from "lottie-react";
 import bg_signIn from "../../assets/img/75126-gaming-console.json";
+import { GoogleLogin } from "@react-oauth/google";
+import FacebookLogin from "react-facebook-login";
+// import TiSocialFacebookCircular from "react-icons/lib/ti/social-facebook-circular";
+// import TiSocialFacebook from "https://clinmedjournals.org/articles/blogs/facebook-login.png";
 
 export default function SignIn() {
   let navigate = useNavigate();
@@ -29,6 +33,17 @@ export default function SignIn() {
     console.log("Failed:", errorInfo);
   };
 
+  const responseMessage = (response) => {
+    console.log(response);
+  };
+  const errorMessage = (error) => {
+    console.log(error);
+  };
+
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
+
   return (
     <div className="signIn">
       <LocationHeader title={"Sign In"} location={"Pages"} />
@@ -44,7 +59,6 @@ export default function SignIn() {
             <div className="section_title text-center">
               <h2>Sign In</h2>
             </div>
-
             <Form
               layout="vertical"
               name="basic"
@@ -99,6 +113,29 @@ export default function SignIn() {
                 </Button>
               </Form.Item>
             </Form>
+            {/* Google Login  */}
+            {/* <GoogleLogin
+              cookiePolicy={"single_host_origin"}
+              clientId=""
+              isSignedIn={true}
+              buttonText="Login with Google"
+              onSuccess={(credentialResponse) => {
+                console.log(credentialResponse);
+              }}
+              onError={() => {
+                console.log("Login Failed");
+              }}
+            /> */}
+
+            {/* Facebook Login  */}
+            {/* <FacebookLogin
+              appId=""
+              autoLoad={true}
+              fields="name,email,picture"
+              callback={responseFacebook}
+              cssClass="my-facebook-button-class"
+              icon={<TiSocialFacebook />}
+            /> */}
           </div>
         </div>
       </div>
