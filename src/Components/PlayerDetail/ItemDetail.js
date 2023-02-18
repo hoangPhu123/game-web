@@ -1,21 +1,25 @@
 import React from "react";
 import Button from "../HomePages/Button";
 import "../../assets/css/itemDetail.css";
+import { useGetAllUsers } from "../../service/userService";
 
-export default function ItemDetail() {
+export default function ItemDetail({ data }) {
   return (
     <div className="item__detail">
       {/* The Left  */}
       <div className="item__left">
         {/* avatar  */}
         <div className="detailLeft__avatar">
-          <img src="/img/player1.png" alt="" />
+          <img
+            src={`/img/player${Math.floor(Math.random() * 5 + 1)}.png`}
+            alt=""
+          />
         </div>
 
         {/* profile  */}
         <div className="detailLeft__profile">
-          <h4 className="profileDetail__title">LION KING</h4>
-          <h5 className="profileDetail__level">36 LEVEL COMPLETED</h5>
+          <h4 className="profileDetail__title">{data?.name}</h4>
+          <h5 className="profileDetail__level">{data?.email}</h5>
           <div className="profileDetail__bgBtn">
             <img
               width={351}

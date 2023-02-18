@@ -443,6 +443,10 @@ export default function CaroGame() {
       <div className="center">
         <div className="chat">
           <div className="messages" id="chat">
+            <h5 style={{ color: "grey", textAlign: "center" }}>
+              {" "}
+              Chat with friend
+            </h5>
             {messages.map((user, index) => (
               <div
                 key={index}

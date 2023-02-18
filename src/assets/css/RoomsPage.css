@@ -1,0 +1,30 @@
+.roomGame__title {
+  padding: 45px 0 50px 0;
+  font-size: 5rem;
+  font-weight: 700;
+}
+.roomGame__content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.roomGame__content a {
+  text-decoration: none;
+}
+.roomGame__content a div {
+  background: rgba(24, 14, 61, 0.5);
+  padding: 25px 8px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+.roomGame__content a:hover div {
+  color: rgba(177, 84, 240, 0.5);
+}/*# sourceMappingURL=RoomsPage.css.map */

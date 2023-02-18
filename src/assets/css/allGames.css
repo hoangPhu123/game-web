@@ -84,7 +84,7 @@
 
 .category__right_search {
   position: relative;
-  width: 298px;
+  width: 100%;
   border: 2px solid rgb(40, 30, 77);
   border-radius: 10px;
   transition: 0.3s;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import LocationHeader from "../SignUp/LocationHeader";
 import GameList from "../HomePages/GameList";
 import Numbers from "../HomePages/Numbers";
@@ -10,7 +10,45 @@ import Snake from "../../assets/img/Snakes.jpg";
 import TwoGame from "../../assets/img/2048.jpg";
 import "../../assets/css/allGames.css";
 
+const gameArray = [
+  {
+    img: Caro,
+    route: "/caroGame/room",
+    title: "Caro Game Online",
+  },
+  {
+    img: colorBlastImg,
+    route: "/colorBlastGame",
+    title: "Color Blast",
+  },
+  {
+    img: Fruit,
+    route: "/menjaGame",
+    title: "Fruit Ninja",
+  },
+  {
+    img: Snake,
+    route: "/snakeGame",
+    title: "Snake",
+  },
+  {
+    img: TwoGame,
+    route: "/twoGame",
+    title: "Two Game",
+  },
+];
+
 export default function AllGames() {
+  const [values, setValues] = useState("");
+
+  const handleChange = (e) => {
+    setValues(e.target.value);
+  };
+
+  const filteredGameArray = useMemo(() =>
+    gameArray.filter((game) => game.title.toLowerCase().includes(values))
+  );
+
   return (
     <>
       <LocationHeader title={"All games"} location={"All games"} />
@@ -20,7 +58,7 @@ export default function AllGames() {
         <div className="allGames__category">
           <form action="#">
             <div className="category__content d-flex justify-content-between">
-              <div className="category__left d-flex">
+              {/* <div className="category__left d-flex">
                 <div className="gaming__list">
                   <select style={{ display: "none" }}>
                     <option selected value={1}>
@@ -76,10 +114,14 @@ export default function AllGames() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="category__right_search">
-                <input placeholder="Search here" type="text" />
+                <input
+                  onChange={handleChange}
+                  placeholder="Search here"
+                  type="text"
+                />
                 <button>
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -90,36 +132,14 @@ export default function AllGames() {
 
         {/* All Games  */}
         <div className="allGames__list row">
-          <GameList
-            name={"portfolio__item item__pic1 wow"}
-            img={Caro}
-            route="/caroGame/room"
-            title={"Caro Game Online"}
-          />
-          <GameList
-            name={"portfolio__item item__pic2 wow"}
-            img={colorBlastImg}
-            route="/colorBlastGame"
-            title={"Color Blast"}
-          />
-          <GameList
-            name={"portfolio__item item__pic3 wow"}
-            img={Fruit}
-            route="/menjaGame"
-            title={"Fruit Ninja"}
-          />
-          <GameList
-            name={"portfolio__item item__pic4 wow"}
-            img={Snake}
-            route="/snakeGame"
-            title={"Eat snakes"}
-          />
-          <GameList
-            name={"portfolio__item item__pic5 wow"}
-            img={TwoGame}
-            route="/twoGame"
-            title={"Two Game"}
-          />
+          {filteredGameArray.map((item, index) => (
+            <GameList
+              name={`portfolio__item wow item__pic${index}`}
+              img={item.img}
+              route={item.route}
+              title={item.title}
+            />
+          ))}
         </div>
       </div>
 

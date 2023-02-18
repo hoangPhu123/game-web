@@ -35,10 +35,6 @@ body {
 .o-winner {
   text-shadow: 0 0 10px #ff9bc6, 0 0 0px #ff9bc6, 0 0 40px #ff9bc6, 0 0 2px #ff9bc6;
 } 
-input[type=text] {
-  color: red;
-}
-
 body,
 html {
   font-family: Red hat Display, sans-serif;

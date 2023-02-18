@@ -11,3 +11,16 @@ export let postRegister = (data) => {
 export let postContact = (data) => {
   return https.post("/contacts", data);
 };
+
+export const useGetAllUsers = () => {
+  return async () => {
+    try {
+      const rs = await https.get(`/users`);
+      return rs;
+    } catch (err) {
+      if (err) {
+        console.log(err);
+      }
+    }
+  };
+};
