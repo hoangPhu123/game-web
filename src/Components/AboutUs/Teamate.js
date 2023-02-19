@@ -1,7 +1,7 @@
 import React from "react";
 import "../../assets/css/teamate.css";
 
-export default function Teamate({ img, memberName }) {
+export default function Teamate({ img, memberName1, memberName2 }) {
   // let { img, memberName } = this.props;
   return (
     <div className="game__team">
@@ -24,7 +24,7 @@ export default function Teamate({ img, memberName }) {
 
                 <div className="member__position">
                   <h3>
-                    <a href="#">{memberName}</a>
+                    <a href="#">{memberName1}</a>
                   </h3>
                   <span>Team Member</span>
                 </div>
@@ -39,7 +39,7 @@ export default function Teamate({ img, memberName }) {
 
                 <div className="member__position">
                   <h3>
-                    <a href="#">{memberName}</a>
+                    <a href="#">{memberName2}</a>
                   </h3>
                   <span>Team Member</span>
                 </div>

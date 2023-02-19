@@ -1,0 +1,129 @@
+.modalForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 11;
+}
+.modalForm__wrapper {
+  max-width: 500px;
+  margin: 1.75rem auto;
+}
+.modalForm__wrapper .modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: url(https://demo2.cybersoft.edu.vn/static/media/hornor.a74f5377.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  z-index: 10000000000000000000;
+}
+.modalForm__wrapper .modal-content .modalUpdateHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+  color: white;
+  padding: 10px 50px;
+}
+.modalForm__wrapper .modal-content .modalUpdateHeader .modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+.modalForm__wrapper .modal-content .modalUpdateHeader button.close {
+  background-color: transparent;
+  border: 0;
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 white;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.modalForm__wrapper .modal-content .modalUpdate {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modalForm__wrapper .modal-content .modalUpdate form {
+  width: 100%;
+}
+.modalForm__wrapper .modal-content .modalUpdate form h6 {
+  padding-top: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.modalForm__wrapper .modal-content .modalUpdate form input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 2px solid #41b294;
+  outline: none;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: #000;
+}
+.modalForm__wrapper .modal-content .modalUpdate form .message {
+  height: 22px;
+}
+.modalForm__wrapper .modal-content .modalUpdate form .errorMessage {
+  text-align: left;
+  color: rgba(240, 23, 23, 0.835);
+  width: 100%;
+  font-size: 15px;
+}
+.modalForm__wrapper .modal-content .modalUpdate form .form-footer {
+  border-top: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  border-bottom-right-radius: calc(0.3rem - 1px);
+  border-bottom-left-radius: calc(0.3rem - 1px);
+}
+.modalForm__wrapper .modal-content .modalUpdate form .form-footer > * {
+  margin: 0.25rem;
+}
+.modalForm__wrapper .modal-content .modalUpdate form .form-footer .btnSubmit {
+  background-color: #41b294;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-transform: none;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+.modalForm__wrapper .modal-content .modalUpdate form .form-footer .btnClose {
+  background-color: #dc3545;
+}/*# sourceMappingURL=PersonalInfo.css.map */

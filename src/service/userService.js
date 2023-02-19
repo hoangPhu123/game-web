@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { https } from "./configURL";
 
 export let postLogin = (data) => {
@@ -24,3 +25,20 @@ export const useGetAllUsers = () => {
     }
   };
 };
+
+export const useUpdateUserInfo = () => {
+  const user = useSelector((state) => {
+    return state.userReducer.user.user;
+  });
+  return async (userInfo) => {
+    try {
+      const response = await https.patch(`/users/${user._id}`, {
+        ...user,
+        userInfo,
+      });
+      return response;
+    } catch (err) {}
+  };
+};
+
+export const updateUser = () => {};

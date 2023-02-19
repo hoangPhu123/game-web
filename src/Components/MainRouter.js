@@ -18,6 +18,7 @@ import TwoGame from "./Games/GameTwo048/TwoGame";
 import Layout from "../HOC/Layout";
 import NotFoundPage from "./NotFoundPage/NotFoundPage";
 import RoomsPage from "./Games/Rooms/RoomsPage";
+import PersonalInfo from "./PrivateInfo/PersonalInfo";
 
 const MainRouter = () => (
   <>
@@ -60,6 +61,14 @@ const MainRouter = () => (
         element={
           <Layout>
             <PlayerDetail />
+          </Layout>
+        }
+      />
+      <Route
+        path="/playerInfo"
+        element={
+          <Layout>
+            <PersonalInfo />
           </Layout>
         }
       />

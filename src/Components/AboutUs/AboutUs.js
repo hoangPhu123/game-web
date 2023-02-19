@@ -49,12 +49,14 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-
           <Numbers />
-
+          <br /> <br />
+          <br />
+          <br />
           <Teamate
             img={"https://htmldemo.net/bonx/bonx/assets/img/others/team1.webp"}
-            memberName={"Le Trinh Hoang Phu"}
+            memberName1={"Le Trinh Hoang Phu"}
+            memberName2={"Tran Dang Khoa"}
           />
         </div>
       </div>

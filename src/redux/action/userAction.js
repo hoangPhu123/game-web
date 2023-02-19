@@ -29,7 +29,7 @@ export const setUserActionService = (values, onSuccess) => {
       })
       .catch((err) => {
         swal({
-          title: err.response.data,
+          title: err.response.data.messages,
           icon: "warning",
           text: "An error occurred, please return to the homepage or try again",
           timer: 2000,
@@ -47,14 +47,25 @@ export const setUserLogUpActionService = (values, onSuccess) => {
 
     postRegister(values)
       .then((res) => {
-        message.success("Successfully register");
+        swal({
+          title: "Successfully register",
+          icon: "success",
+          timer: 2000,
+          button: false,
+        });
         dispatch({
           type: SET_USER_LOGUP,
         });
         onSuccess();
       })
       .catch((err) => {
-        message.error(err.response.data.message);
+        swal({
+          title: err.response.data.messages,
+          icon: "warning",
+          text: "An error occurred, please return to the homepage or try again",
+          timer: 2000,
+          button: false,
+        });
       });
   };
 };
@@ -63,7 +74,12 @@ export const setUserContactActionService = (values, onSuccess) => {
   return (dispatch) => {
     postContact(values)
       .then((res) => {
-        message.success("Successfully send contact");
+        swal({
+          title: "Successfully send contact",
+          icon: "success",
+          timer: 2000,
+          button: false,
+        });
         onSuccess();
       })
       .catch((err) => {
