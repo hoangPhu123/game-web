@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Button from "../HomePages/Button";
@@ -16,18 +16,12 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useUpdateUserInfo } from "../../service/userService";
+import { setUserUpdateActionService } from "../../redux/action/userAction";
 
 function createData(name, scores) {
   return { name, scores };
 }
-
-const rows = [
-  createData("CaroGame", 356),
-  createData("ColorBlast", 159),
-  createData("Menja", 237),
-  createData("Snake", 262),
-  createData("TwoGame", 305),
-];
 
 function PersonalInfo() {
   const [show, setShow] = useState(false);
@@ -38,10 +32,18 @@ function PersonalInfo() {
     return state.userReducer.user.user;
   });
 
+  const rows = [
+    createData("Color Blast", user.color_blast_score),
+    createData("Fruit Ninja", user.menja_score),
+    createData("Snake", user.snake_score),
+    createData("2048", user.score),
+  ];
+
   let regexPassword =
     /^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/;
 
   // Formik form
+  const onUpdate = useUpdateUserInfo();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -55,7 +57,12 @@ function PersonalInfo() {
         .matches(regexPassword, "Enter only alphanumeric characters"),
     }),
     onSubmit: (values, formik) => {
-      //   dispatch(userUpdate(values, formik));
+      //   onUpdate(values).then((rs) => {
+      //     if (rs) {
+      //       console.log("succes");
+      //     }
+      //   });
+      dispatch(setUserUpdateActionService(values, formik));
     },
   });
 
@@ -116,10 +123,12 @@ function PersonalInfo() {
                   <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                       <TableRow>
-                        <TableCell>
-                          <strong>Games</strong>
+                        <TableCell style={{ fontSize: 18, fontWeight: 700 }}>
+                          Games
                         </TableCell>
-                        <TableCell align="right">Scores</TableCell>
+                        <TableCell style={{ fontSize: 18, fontWeight: 700 }}>
+                          Scores
+                        </TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -133,20 +142,27 @@ function PersonalInfo() {
                           <TableCell component="th" scope="row">
                             {row.name}
                           </TableCell>
-                          <TableCell align="right">{row.scores}</TableCell>
+                          <TableCell>{row.scores}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
                   </Table>
                 </TableContainer>
 
-                <Button
-                  value={"Update Now"}
-                  id={"btnDetail"}
+                <div
+                  className="btnTem"
                   onClick={() => {
                     setShow(!show);
                   }}
-                />
+                >
+                  <a
+                    href="#"
+                    className="btn btn-link no-underline"
+                    id="btnDetail"
+                  >
+                    Update Now
+                  </a>
+                </div>
 
                 {/* social link  */}
                 <div className="social-link">
@@ -180,74 +196,76 @@ function PersonalInfo() {
       </div>
 
       {/* Modal  */}
-      <div className="modalForm" style={{ paddingLeft: "0" }}>
-        <div className="modalForm__wrapper">
-          <div className="modal-content">
-            <div className=" modal-header modalUpdateHeader">
-              <h5 className="modal-title">Update Personal Information</h5>
+      {show ? (
+        <div className="modalForm" style={{ paddingLeft: "0" }}>
+          <div className="modalForm__wrapper">
+            <div className="modal-content">
+              <div className=" modal-header modalUpdateHeader">
+                <h5 className="modal-title">Update Personal Information</h5>
 
-              <button
-                type="button"
-                className="close"
-                onClick={() => {
-                  setShow(!show);
-                }}
-              >
-                ×
-              </button>
-            </div>
-            <div className="modal-body modalUpdate">
-              <form onSubmit={formik.handleSubmit}>
-                <h6>Full Name</h6>
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  name="name"
-                  onBlur={formik.handleBlur}
-                  onChange={formik.handleChange}
-                  value={formik.values.name}
-                />
-                {formik.errors.name && formik.touched.name ? (
-                  <div className="errorMessage">{formik.errors.name}</div>
-                ) : (
-                  <div className="message"></div>
-                )}
+                <button
+                  type="button"
+                  className="close"
+                  onClick={() => {
+                    setShow(!show);
+                  }}
+                >
+                  ×
+                </button>
+              </div>
+              <div className="modal-body modalUpdate">
+                <form onSubmit={formik.handleSubmit}>
+                  <h6>Full Name</h6>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    name="name"
+                    onBlur={formik.handleBlur}
+                    onChange={formik.handleChange}
+                    value={formik.values.name}
+                  />
+                  {formik.errors.name && formik.touched.name ? (
+                    <div className="errorMessage">{formik.errors.name}</div>
+                  ) : (
+                    <div className="message"></div>
+                  )}
 
-                <h6>Password</h6>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  onBlur={formik.handleBlur}
-                  onChange={formik.handleChange}
-                  value={formik.values.password}
-                />
-                {formik.errors.password && formik.touched.password ? (
-                  <div className="errorMessage">{formik.errors.password}</div>
-                ) : (
-                  <div className="message"></div>
-                )}
+                  <h6>Password</h6>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    onBlur={formik.handleBlur}
+                    onChange={formik.handleChange}
+                    value={formik.values.password}
+                  />
+                  {formik.errors.password && formik.touched.password ? (
+                    <div className="errorMessage">{formik.errors.password}</div>
+                  ) : (
+                    <div className="message"></div>
+                  )}
 
-                {/* Button Form  */}
-                <div className="form-footer modal-footer">
-                  <button type="submit" className="btnSubmit">
-                    Complete
-                  </button>
-                  <button
-                    type="button"
-                    className="btnSubmit btnClose"
-                    onClick={() => {
-                      setShow(!show);
-                    }}
-                  >
-                    Close
-                  </button>
-                </div>
-              </form>
+                  {/* Button Form  */}
+                  <div className="form-footer modal-footer">
+                    <button type="submit" className="btnSubmit">
+                      Complete
+                    </button>
+                    <button
+                      type="button"
+                      className="btnSubmit btnClose"
+                      onClick={() => {
+                        setShow(!show);
+                      }}
+                    >
+                      Close
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }

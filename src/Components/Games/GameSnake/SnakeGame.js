@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import "../../../assets/css/snakeGame.css";
+import { useUpdateUserInfo } from "../../../service/userService";
 
-export default class SNAKE extends Component {
+function withMyHook(Component) {
+  return function WrappedComponent(props) {
+    const updateUser = useUpdateUserInfo();
+    return <Component {...props} updateUser={updateUser} />;
+  };
+}
+
+class SNAKE extends Component {
   constructor(props) {
     super(props);
     this.handleLoad = this.handleLoad.bind(this);
@@ -382,9 +390,10 @@ export default class SNAKE extends Component {
       }
     }
 
-    function gameOver() {
+    async function gameOver() {
       if (!maxScore) maxScore = score;
       if (score > maxScore) maxScore = score;
+      // this.props.updateUser({ snake_game: maxScore });
 
       window.localStorage.setItem("maxScore", maxScore);
       CTX.fillStyle = "#4cffd7";
@@ -432,3 +441,5 @@ export default class SNAKE extends Component {
     );
   }
 }
+
+export default withMyHook(SNAKE);

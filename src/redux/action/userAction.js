@@ -4,8 +4,13 @@ import {
   postLogin,
   postRegister,
   postContact,
+  useUpdateUserInfo,
 } from "../../service/userService";
-import { SET_USER_LOGIN, SET_USER_LOGUP } from "../constant/userConstant";
+import {
+  SET_USER_LOGIN,
+  SET_USER_LOGUP,
+  UPDATE_USER_INFOR,
+} from "../constant/userConstant";
 import swal from "sweetalert";
 
 export const setUserActionService = (values, onSuccess) => {
@@ -84,6 +89,39 @@ export const setUserContactActionService = (values, onSuccess) => {
       })
       .catch((err) => {
         message.error(err.response.data.message);
+      });
+  };
+};
+
+// Update user information
+export const setUserUpdateActionService = (values, formik) => {
+  return (dispatch) => {
+    useUpdateUserInfo(values)
+      .then((res) => {
+        swal({
+          title: "Successfully Updated",
+          icon: "success",
+          timer: 2000,
+          button: false,
+        });
+        dispatch({
+          type: UPDATE_USER_INFOR,
+          payload: res.data,
+        });
+        formik.resetForm();
+        userLocalService.set(res.data);
+      })
+      .catch((err) => {
+        swal({
+          title: err.response?.data,
+          icon: "warning",
+          text: "An error occurred, please try again",
+          timer: 2000,
+          button: false,
+        });
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       });
   };
 };

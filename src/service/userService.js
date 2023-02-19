@@ -26,19 +26,35 @@ export const useGetAllUsers = () => {
   };
 };
 
-export const useUpdateUserInfo = () => {
+// find a user
+export const useGetUserInfo = (data) => {
   const user = useSelector((state) => {
     return state.userReducer.user.user;
   });
-  return async (userInfo) => {
-    try {
-      const response = await https.patch(`/users/${user._id}`, {
-        ...user,
-        userInfo,
-      });
-      return response;
-    } catch (err) {}
-  };
+  return https.get(`/users/${user.id}`, data);
 };
 
-export const updateUser = () => {};
+// update user info
+// export const useUpdateUserInfo = () => {
+//   const user = useSelector((state) => {
+//     return state.userReducer.user.user;
+//   });
+
+//   return async (userInfo) => {
+//     try {
+//       const response = await https.patch(`/users/${user.id}`, {
+//         userInfo,
+//       });
+//       return response;
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+// };
+
+export const useUpdateUserInfo = (data) => {
+  const user = useSelector((state) => {
+    return state.userReducer.user.user;
+  });
+  return https.patch(`/users/${user.id}`, data);
+};
