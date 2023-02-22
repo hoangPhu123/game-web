@@ -13,7 +13,7 @@ import "../../assets/css/allGames.css";
 const gameArray = [
   {
     img: Caro,
-    route: "/caroGame/room",
+    route: "/choose-type-caro",
     title: "Caro Game Online",
   },
   {

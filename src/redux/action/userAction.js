@@ -94,34 +94,34 @@ export const setUserContactActionService = (values, onSuccess) => {
 };
 
 // Update user information
-export const setUserUpdateActionService = (values, formik) => {
-  return (dispatch) => {
-    useUpdateUserInfo(values)
-      .then((res) => {
-        swal({
-          title: "Successfully Updated",
-          icon: "success",
-          timer: 2000,
-          button: false,
-        });
-        dispatch({
-          type: UPDATE_USER_INFOR,
-          payload: res.data,
-        });
-        formik.resetForm();
-        userLocalService.set(res.data);
-      })
-      .catch((err) => {
-        swal({
-          title: err.response?.data,
-          icon: "warning",
-          text: "An error occurred, please try again",
-          timer: 2000,
-          button: false,
-        });
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-      });
-  };
-};
+// export const setUserUpdateActionService = (values, formik) => {
+//   return (dispatch) => {
+//     useUpdateUserInfo(values)
+//       .then((res) => {
+//         swal({
+//           title: "Successfully Updated",
+//           icon: "success",
+//           timer: 2000,
+//           button: false,
+//         });
+//         dispatch({
+//           type: UPDATE_USER_INFOR,
+//           payload: res.data,
+//         });
+//         formik.resetForm();
+//         userLocalService.set(res.data);
+//       })
+//       .catch((err) => {
+//         swal({
+//           title: err.response?.data,
+//           icon: "warning",
+//           text: "An error occurred, please try again",
+//           timer: 2000,
+//           button: false,
+//         });
+//         setTimeout(() => {
+//           window.location.reload();
+//         }, 1000);
+//       });
+//   };
+// };

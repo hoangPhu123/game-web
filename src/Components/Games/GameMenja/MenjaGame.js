@@ -2162,7 +2162,7 @@ export default class Menja extends Component {
             </button>
           </div>
           <div className="menu menu--score">
-            <h1>Game Over</h1>
+            <h1 className="py-10">Game Over</h1>
             <h2>Your Score:</h2>
             <div className="final-score-lbl" />
             <div className="high-score-lbl" />

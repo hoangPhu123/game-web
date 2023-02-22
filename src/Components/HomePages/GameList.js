@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function GameList({ name, img, route, title }) {
   console.log(route, "route");
   return (
-    <NavLink to={route}>
+    <a href={route}>
       <div className="gameList__content col-lg-10 col-md-7 col-sm-10">
         <div className={name}>
           <a href={route}>
@@ -25,6 +25,6 @@ export default function GameList({ name, img, route, title }) {
           </div>
         </div>
       </div>
-    </NavLink>
+    </a>
   );
 }

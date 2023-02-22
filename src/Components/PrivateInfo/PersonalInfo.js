@@ -7,8 +7,6 @@ import LocationHeader from "../SignUp/LocationHeader";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import "../../assets/css/PersonalInfo.css";
-
-// import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -18,6 +16,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useUpdateUserInfo } from "../../service/userService";
 import { setUserUpdateActionService } from "../../redux/action/userAction";
+import { UPDATE_USER_INFOR } from "../../redux/constant/userConstant";
+import swal from "sweetalert";
 
 function createData(name, scores) {
   return { name, scores };
@@ -41,7 +41,7 @@ function PersonalInfo() {
 
   let regexPassword =
     /^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/;
-
+  let [loading, setLoading] = useState(false);
   // Formik form
   const onUpdate = useUpdateUserInfo();
   const formik = useFormik({
@@ -52,17 +52,26 @@ function PersonalInfo() {
     validationSchema: Yup.object().shape({
       name: Yup.string().required("Name must not be blank"),
 
-      password: Yup.string()
-        .required("Account must not be empty")
-        .matches(regexPassword, "Enter only alphanumeric characters"),
+      // password: Yup.string()
+      //   .required("Account must not be empty")
+      //   .matches(regexPassword, "Enter only alphanumeric characters"),
     }),
     onSubmit: (values, formik) => {
-      //   onUpdate(values).then((rs) => {
-      //     if (rs) {
-      //       console.log("succes");
-      //     }
-      //   });
-      dispatch(setUserUpdateActionService(values, formik));
+      onUpdate(values).then((rs) => {
+        if (rs) {
+          user.name = values.name;
+          user.password = values.password;
+          console.log(user);
+          swal({
+            title: "Update successful",
+            icon: "success",
+            timer: 2000,
+            button: false,
+          });
+          setShow(false);
+        }
+      });
+      //   dispatch(setUserUpdateActionService(values, formik));
     },
   });
 

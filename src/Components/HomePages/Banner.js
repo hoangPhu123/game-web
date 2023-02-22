@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../../assets/css/banner.css";
 import Button from "./Button";
 
@@ -18,7 +19,9 @@ export default function Banner() {
               doloremque ex repellat!
             </p>
           </div>
-          <Button value={"Play"} id={"btnPlay"} />
+          <NavLink to={"/allGames"}>
+            <Button value={"Play"} id={"btnPlay"} />
+          </NavLink>
         </div>
       </div>
     </section>

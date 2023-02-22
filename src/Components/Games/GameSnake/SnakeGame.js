@@ -17,10 +17,36 @@ class SNAKE extends Component {
 
   componentDidMount() {
     window.addEventListener("load", this.handleLoad);
+    window.addEventListener(
+      "keydown",
+      function (e) {
+        if (
+          ["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(
+            e.code
+          ) > -1
+        ) {
+          e.preventDefault();
+        }
+      },
+      false
+    );
   }
 
   componentWillUnmount() {
     window.removeEventListener("load", this.handleLoad);
+    window.addEventListener(
+      "keydown",
+      function (e) {
+        if (
+          ["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(
+            e.code
+          ) > -1
+        ) {
+          e.preventDefault();
+        }
+      },
+      false
+    );
   }
 
   handleLoad() {

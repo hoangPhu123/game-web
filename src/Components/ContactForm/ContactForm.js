@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUserContactActionService } from "../../redux/action/userAction";
 import "../../assets/css/contactForm.css";
+import emailjs from "emailjs-com";
 
 const { Option } = Select;
 
@@ -39,14 +40,44 @@ const tailFormItemLayout = {
     },
   },
 };
+var title = "";
+var email = "";
+var message = "";
+
+function sendEmail(e) {
+  e.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
+
+  emailjs
+    .sendForm(
+      "service_3z4l9tr",
+      "template_ccda2dh",
+      e.target,
+      "5i68MbD6yb9X5YVPN"
+    )
+    .then(
+      (result) => {
+        window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+}
 
 export default function ContactForm() {
+  const navigate = useNavigate();
   const [form] = Form.useForm();
   let dispatch = useDispatch();
   const onFinish = (values) => {
     if (values?.prefix) {
       delete values.prefix;
     }
+    title = values.title;
+    email = values.email;
+    message = values.message;
+    // window.location.href =
+    //   "mailto:";
+
     const handleSignUpNavigate = () => {
       setTimeout(() => {
         form.resetFields();
@@ -110,7 +141,7 @@ export default function ContactForm() {
               },
             ]}
           >
-            <Input placeholder="Email" className="text-white" />
+            <Input placeholder="Email" className="text-white" id="email" />
           </Form.Item>
 
           <Form.Item
@@ -157,7 +188,7 @@ export default function ContactForm() {
               },
             ]}
           >
-            <Input placeholder="Title" className="p-3 " />
+            <Input placeholder="Title" id="title" className="p-3 " />
           </Form.Item>
           <Form.Item
             name="message"
@@ -174,6 +205,7 @@ export default function ContactForm() {
               showCount
               maxLength={100}
               placeholder="Write a review from here"
+              id="message"
             />
           </Form.Item>
 
@@ -181,6 +213,7 @@ export default function ContactForm() {
             <Button
               htmlType="submit"
               className="px-20 h-12 bg-blue-600 hover:bg-blue-800 border-none"
+              onSubmit={sendEmail}
             >
               Send
             </Button>

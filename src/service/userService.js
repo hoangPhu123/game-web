@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { https } from "./configURL";
 
 export let postLogin = (data) => {
@@ -29,32 +31,33 @@ export const useGetAllUsers = () => {
 // find a user
 export const useGetUserInfo = (data) => {
   const user = useSelector((state) => {
-    return state.userReducer.user.user;
+    return state?.userReducer?.user?.user;
   });
   return https.get(`/users/${user.id}`, data);
 };
 
 // update user info
-// export const useUpdateUserInfo = () => {
+export const useUpdateUserInfo = () => {
+  const user = useSelector((state) => {
+    return state?.userReducer?.user?.user;
+  });
+
+  return async (userInfo) => {
+    try {
+      const response = await https.patch(`/users/${user.id}`, {
+        userInfo,
+      });
+      return response;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+// const navigate = useNavigate();
+
+// export const useUpdateUserInfo = (data) => {
 //   const user = useSelector((state) => {
 //     return state.userReducer.user.user;
 //   });
-
-//   return async (userInfo) => {
-//     try {
-//       const response = await https.patch(`/users/${user.id}`, {
-//         userInfo,
-//       });
-//       return response;
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
+//   return https.patch(`/users/${user.id}`, data);
 // };
-
-export const useUpdateUserInfo = (data) => {
-  const user = useSelector((state) => {
-    return state.userReducer.user.user;
-  });
-  return https.patch(`/users/${user.id}`, data);
-};

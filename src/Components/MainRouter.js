@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route, Routes } from "react-router-dom";
-
 import HomePage from "./HomePage";
 import SignUp from "./SignUp/SignUp";
 import SignIn from "./SignIn/SignIn";
@@ -10,8 +9,8 @@ import AllGames from "./AllGames/AllGames";
 import AboutUs from "./AboutUs/AboutUs";
 import ContactForm from "./ContactForm/ContactForm";
 import CaroGame from "./Games/GameCaro/CaroGame";
+import OfflineCaro from "./Games/GameCaro/OfflineCaro";
 import ColorBlast from "./Games/GameColorBlast/ColorBlastGame";
-import Coloron from "./Games/GameColoron/ColoronGame";
 import Menja from "./Games/GameMenja/MenjaGame";
 import SNAKE from "./Games/GameSnake/SnakeGame";
 import TwoGame from "./Games/GameTwo048/TwoGame";
@@ -19,6 +18,7 @@ import Layout from "../HOC/Layout";
 import NotFoundPage from "./NotFoundPage/NotFoundPage";
 import RoomsPage from "./Games/Rooms/RoomsPage";
 import PersonalInfo from "./PrivateInfo/PersonalInfo";
+import ChooseType from "./Games/GameCaro/ChooseType";
 
 const MainRouter = () => (
   <>
@@ -32,6 +32,7 @@ const MainRouter = () => (
           </Layout>
         }
       />
+      <Route exact path="/offlineCaroGame" element={<OfflineCaro />} />
       <Route
         path="/signup"
         element={
@@ -40,6 +41,7 @@ const MainRouter = () => (
           </Layout>
         }
       />
+      <Route path="/choose-type-caro" element={<ChooseType />} />
       <Route
         path="/signin"
         element={
@@ -100,8 +102,6 @@ const MainRouter = () => (
       <Route path="/caroGame" element={<CaroGame />} />
       <Route path="/caroGame/room" element={<RoomsPage />} />
       <Route path="/colorBlastGame" element={<ColorBlast />} />
-      {/* mistake coloronGame  */}
-      <Route path="/coloronGame" element={<Coloron />} />
       <Route path="/menjaGame" element={<Menja />} />
       <Route path="/snakeGame" element={<SNAKE />} />
       <Route path="/twoGame" element={<TwoGame />} />
