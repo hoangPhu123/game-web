@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as ReactDOM from "react-dom";
 import "../../../assets/css/twoGame.css";
+import ComeBack from "../../ComeBack/ComeBack";
 
 export default class TwoGame extends Component {
   constructor(props) {
@@ -486,14 +487,18 @@ export default class TwoGame extends Component {
 
   render() {
     return (
-      <div className="mt-48 mb-28">
-        <h1 className="text-center text-5xl animated fadeInRightBig">2048</h1>
-        <p className="text-center mb-10">
-          Use the buttons or arrow keys to play game. Press 'N' to start a new
-          game.
-        </p>
-        <div id="main" />
-      </div>
+      <>
+        <div className="mb-40">
+          <ComeBack src={"/allGames"} />
+          <h1 className="text-center text-5xl animated fadeInRightBig">2048</h1>
+
+          <p className="text-center mb-10">
+            Use the buttons or arrow keys to play game. Press 'N' to start a new
+            game.
+          </p>
+          <div id="main" />
+        </div>
+      </>
     );
   }
 }

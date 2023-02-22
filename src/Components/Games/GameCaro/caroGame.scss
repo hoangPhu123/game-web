@@ -235,6 +235,7 @@ html {
   font-family: Red hat Display, sans-serif;
   font-weight: 400;
   letter-spacing: 0.025em;
+  color: black;
 }
 .chat .input input:placeholder {
   color: #999;
@@ -255,5 +256,24 @@ html {
 .stark {
   color: black !important;
 }
-
-
+.typeCaro {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  right: 25%;
+  .offLineType,
+  .onlLineType {
+    padding: 135px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 80px;
+    background: #746dd0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    &:hover {
+      background: rgb(116, 109, 208, 0.5);
+    }
+  }
+}

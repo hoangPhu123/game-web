@@ -252,6 +252,7 @@ html {
   font-family: Red hat Display, sans-serif;
   font-weight: 400;
   letter-spacing: 0.025em;
+  color: black;
 }
 
 .chat .input input:placeholder {
@@ -270,4 +271,27 @@ html {
 }
 .stark {
   color: black !important;
+}
+
+.typeCaro {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  right: 25%;
+}
+.typeCaro .offLineType,
+.typeCaro .onlLineType {
+  padding: 135px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 80px;
+  background: #746dd0;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+.typeCaro .offLineType:hover,
+.typeCaro .onlLineType:hover {
+  background: rgba(116, 109, 208, 0.5);
 }/*# sourceMappingURL=caroGame.css.map */

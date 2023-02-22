@@ -2,8 +2,30 @@ import React from "react";
 import Button from "../HomePages/Button";
 import "../../assets/css/itemDetail.css";
 import { useGetAllUsers } from "../../service/userService";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import { useSelector } from "react-redux";
+
+function createData(name, scores) {
+  return { name, scores };
+}
 
 export default function ItemDetail({ data }) {
+  const user = useSelector((state) => {
+    return state.userReducer.user.user;
+  });
+
+  const rows = [
+    createData("Color Blast", user.color_blast_score),
+    createData("Menja", user.menja_score),
+    createData("Snake", user.snake_score),
+    createData("2048", user.score),
+  ];
   return (
     <div className="item__detail">
       {/* The Left  */}
@@ -36,7 +58,7 @@ export default function ItemDetail({ data }) {
       <div className="item__right">
         <span className="title-tag">PLAYER PROFILE</span>
         <h4>Space Game expert</h4>
-        <p>
+        {/* <p>
           It is a long established fact that a reader will be distracted
           readable content page when looking at it layout the point using lorem
           Ipsum that it has more-or-less normal distribution lette desktop
@@ -46,7 +68,37 @@ export default function ItemDetail({ data }) {
           It is a long established fact that and reader will been distracted
           readable content page when looking at it layout the point using
           desktop packages and web page now editors.
-        </p>
+        </p> */}
+
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell style={{ fontSize: 18, fontWeight: 700 }}>
+                  Games
+                </TableCell>
+                <TableCell style={{ fontSize: 18, fontWeight: 700 }}>
+                  Scores
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                  }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.name}
+                  </TableCell>
+                  <TableCell>{row.scores}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
 
         <Button value={"Contact Now"} id={"btnDetail"} />
 

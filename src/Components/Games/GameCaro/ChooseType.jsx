@@ -1,17 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import LocationHeader from "../../SignUp/LocationHeader";
+import ComeBack from "../../ComeBack/ComeBack";
 
 const ChooseType = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <div className="flex justify-center items-center">
+    <>
+      <ComeBack src={"/allGames"} />
+      <div className="flex justify-center items-center typeCaro">
         <div
           onClick={() => {
             navigate("/offlineCaroGame/");
           }}
-          className="px-5 py-2 rounded-full bg-blue-300"
+          className="offLineType"
         >
           Offline
         </div>
@@ -19,13 +20,13 @@ const ChooseType = () => {
           onClick={() => {
             navigate("/caroGame/room/");
           }}
-          className="px-5 py-2 rounded-full text-red-500 bg-red-300 mx-2 cursor-pointer"
+          className="onlLineType"
         >
           {" "}
           Online
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

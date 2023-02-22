@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../../assets/css/colorBlastGame.css";
+import ComeBack from "../../ComeBack/ComeBack";
 
 export default class ColorBlast extends Component {
   constructor(props) {
@@ -436,6 +437,7 @@ export default class ColorBlast extends Component {
   render() {
     return (
       <>
+        <ComeBack src={"/allGames"} />
         <div className="container">
           <div className="game-wrap mt-44 mb-28">
             <h1 className="title text-center mt-4 mb-4">

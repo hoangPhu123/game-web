@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../../assets/css/snakeGame.css";
 import { useUpdateUserInfo } from "../../../service/userService";
+import ComeBack from "../../ComeBack/ComeBack";
 
 function withMyHook(Component) {
   return function WrappedComponent(props) {
@@ -13,7 +14,9 @@ class SNAKE extends Component {
   constructor(props) {
     super(props);
     this.handleLoad = this.handleLoad.bind(this);
+    this.updateUser = this.props.updateUser;
   }
+  updateUser = null;
 
   componentDidMount() {
     window.addEventListener("load", this.handleLoad);
@@ -215,7 +218,8 @@ class SNAKE extends Component {
     };
 
     class Snake {
-      constructor(i, type) {
+      constructor(i, type, updateUser) {
+        console.log(updateUser);
         this.pos = new helpers.Vec(W / 2, H / 2);
         this.dir = new helpers.Vec(0, 0);
         this.type = type;
@@ -393,7 +397,7 @@ class SNAKE extends Component {
       KEY.listen();
       cellsCount = cells * cells;
       cellSize = W / cells;
-      snake = new Snake();
+      snake = new Snake(undefined, undefined);
       food = new Food();
       dom_replay.addEventListener("click", reset, false);
       loop();
@@ -448,22 +452,25 @@ class SNAKE extends Component {
   render() {
     return (
       //  mb-14
-      <div className="container noselect pt-40">
-        <div id="author" className="mb-3">
-          <h1>SNAKE</h1>
-        </div>
-        <div className="wrapper">
-          <button id="replay">
-            <i className="fas fa-play" />
-            RESTART
-          </button>
-          <div id="canvas"></div>
-          <div id="ui">
-            <h2>SCORE</h2>
-            <span id="score">00</span>
+      <>
+        <ComeBack src={"/allGames"} />
+        <div className="container noselect">
+          <div id="author" className="mb-3">
+            <h1>SNAKE</h1>
+          </div>
+          <div className="wrapper">
+            <button id="replay">
+              <i className="fas fa-play" />
+              RESTART
+            </button>
+            <div id="canvas"></div>
+            <div id="ui">
+              <h2>SCORE</h2>
+              <span id="score">00</span>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

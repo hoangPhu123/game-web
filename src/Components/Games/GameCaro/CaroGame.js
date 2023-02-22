@@ -13,6 +13,7 @@ import {
   startGame,
   subscribeStartGame,
 } from "../../../service/socketio.service";
+import ComeBack from "../../ComeBack/ComeBack";
 
 const userLocal = JSON.parse(localStorage.getItem("USER_LOCAL"));
 const curentUserId = userLocal?.user?.id;
@@ -373,6 +374,7 @@ export default function CaroGame() {
   return (
     <>
       <section className="game-board">
+        <ComeBack src={"/caroGame/room"} />
         <div className="text-center py-2 shadow-sm text-white text-5xl font-medium z-50 sticky mb-4">
           <h4 style={{ marginBottom: 14 }}>
             {getGameStatus(gameState, isPlayer1)}

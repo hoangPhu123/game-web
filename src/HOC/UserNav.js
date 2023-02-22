@@ -22,7 +22,7 @@ function UserNav() {
     if (user) {
       return (
         <>
-          <span>{user.user?.name}</span>
+          <span>{user?.user.name}</span>
           <button
             className="border-2 border-gray-400 px-3 py-2 rounded hover:bg-gray-300 hover:text-gray-700 font-black"
             onClick={() => handleLogout()}

@@ -42,11 +42,14 @@ export default function Header() {
                         <a href="#">About Us</a>
                       </NavLink>
                     </li>
-                    <li className="sub__pages">
-                      <NavLink to="/allGames">
-                        <a href="#">All Games</a>
-                      </NavLink>
-                    </li>
+
+                    {user ? (
+                      <li className="sub__pages">
+                        <NavLink to="/allGames">
+                          <a href="#">All Games</a>
+                        </NavLink>
+                      </li>
+                    ) : null}
 
                     <li className="sub__pages">
                       <NavLink to="/players">
@@ -54,11 +57,11 @@ export default function Header() {
                       </NavLink>
                     </li>
 
-                    <li className="sub__pages">
+                    {/* <li className="sub__pages">
                       <NavLink to="/playerDetail">
                         <a href="#">Player Details</a>
                       </NavLink>
-                    </li>
+                    </li> */}
                     {user ? (
                       <li className="sub__pages">
                         <NavLink to="/playerInfo">
@@ -79,11 +82,11 @@ export default function Header() {
                       </NavLink>
                     </li>
 
-                    <li className="sub__pages">
+                    {/* <li className="sub__pages">
                       <NavLink to="*">
                         <a href="#">404 Page</a>
                       </NavLink>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
 

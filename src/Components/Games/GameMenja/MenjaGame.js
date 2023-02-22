@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../../assets/css/menjaGame.css";
+import ComeBack from "../../ComeBack/ComeBack";
 
 export default class Menja extends Component {
   constructor(props) {
@@ -2126,8 +2127,10 @@ export default class Menja extends Component {
   render() {
     return (
       <div>
+        <ComeBack src={"/allGames"} />
         {/* Game canvas */}
         <canvas id="c" />
+
         {/* Gameplay HUD */}
         <div className="hud">
           <div className="hud__score">

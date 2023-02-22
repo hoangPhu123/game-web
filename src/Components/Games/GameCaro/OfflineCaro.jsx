@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { calculateAITurn } from "./BotOffline";
 import "../../../assets/css/caroGame.css";
+import ComeBack from "../../ComeBack/ComeBack";
 
 const GAME_STATE = {
   PLAYER_TURN: "player_turn",
@@ -241,6 +242,7 @@ export default function CaroGame() {
 
   return (
     <>
+      <ComeBack src={"/choose-type-caro"} />
       <section className="game-board py-14">
         <div className="text-center py-2 shadow-sm text-white text-5xl font-medium z-50 sticky mb-4">
           {getGameStatus(gameState)}

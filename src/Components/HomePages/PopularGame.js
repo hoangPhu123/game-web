@@ -22,7 +22,7 @@ export default function PopularGame() {
             <GameList
               name={"portfolio__item item__pic1 wow"}
               img={Caro}
-              route="/caroGame/room"
+              route="/choose-type-caro"
               title={"Caro Game"}
             />
             <GameList
@@ -35,7 +35,7 @@ export default function PopularGame() {
               name={"portfolio__item item__pic3 wow"}
               img={Fruit}
               route="/menjaGame"
-              title={"Fruit Ninja"}
+              title={"Menja Game"}
             />
             <GameList
               name={"portfolio__item item__pic4 wow"}

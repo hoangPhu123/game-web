@@ -24,7 +24,7 @@ const gameArray = [
   {
     img: Fruit,
     route: "/menjaGame",
-    title: "Fruit Ninja",
+    title: "Menja Game",
   },
   {
     img: Snake,

@@ -18,6 +18,7 @@ import { useUpdateUserInfo } from "../../service/userService";
 import { setUserUpdateActionService } from "../../redux/action/userAction";
 import { UPDATE_USER_INFOR } from "../../redux/constant/userConstant";
 import swal from "sweetalert";
+import { userLocalService } from "../../service/localService";
 
 function createData(name, scores) {
   return { name, scores };
@@ -32,15 +33,22 @@ function PersonalInfo() {
     return state.userReducer.user.user;
   });
 
+  const handleLogout = async () => {
+    // delete data from localStorage
+    navigate("/signin");
+    userLocalService.remove();
+    window.location.reload();
+  };
+
   const rows = [
     createData("Color Blast", user.color_blast_score),
-    createData("Fruit Ninja", user.menja_score),
+    createData("Menja", user.menja_score),
     createData("Snake", user.snake_score),
     createData("2048", user.score),
   ];
 
-  let regexPassword =
-    /^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/;
+  // let regexPassword =
+  //   /^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/;
   let [loading, setLoading] = useState(false);
   // Formik form
   const onUpdate = useUpdateUserInfo();
@@ -52,9 +60,11 @@ function PersonalInfo() {
     validationSchema: Yup.object().shape({
       name: Yup.string().required("Name must not be blank"),
 
-      // password: Yup.string()
-      //   .required("Account must not be empty")
-      //   .matches(regexPassword, "Enter only alphanumeric characters"),
+      password: Yup.string().required("Password must not be empty"),
+      // .matches(
+      //   // regexPassword,
+      //   "Password is shorter, it more than the minimum allowed length 8 characters"
+      // ),
     }),
     onSubmit: (values, formik) => {
       onUpdate(values).then((rs) => {
@@ -69,6 +79,7 @@ function PersonalInfo() {
             button: false,
           });
           setShow(false);
+          handleLogout();
         }
       });
       //   dispatch(setUserUpdateActionService(values, formik));
