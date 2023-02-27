@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as ReactDOM from "react-dom";
 import "../../../assets/css/twoGame.css";
+import { https } from "../../../service/configURL";
 import ComeBack from "../../ComeBack/ComeBack";
 
 export default class TwoGame extends Component {
@@ -117,7 +118,7 @@ export default class TwoGame extends Component {
       }
 
       // Moves board depending on direction and checks for game over
-      move(direction) {
+      async move(direction) {
         if (!this.state.gameOver) {
           if (direction === "up") {
             const movedUp = this.moveUp(this.state.board);
@@ -130,6 +131,12 @@ export default class TwoGame extends Component {
                   gameOver: true,
                   message: "Game over!",
                 });
+                const response = await https.patch(
+                  `/users/updateuserscore/${
+                    JSON.parse(localStorage.getItem("USER_LOCAL")).user.id
+                  }`,
+                  { twoGameScore: this.state.score }
+                );
               } else {
                 this.setState({
                   board: upWithRandom,
@@ -148,6 +155,12 @@ export default class TwoGame extends Component {
                   gameOver: true,
                   message: "Game over!",
                 });
+                const response = await https.patch(
+                  `/users/updateuserscore/${
+                    JSON.parse(localStorage.getItem("USER_LOCAL")).user.id
+                  }`,
+                  { twoGameScore: this.state.score }
+                );
               } else {
                 this.setState({
                   board: rightWithRandom,
@@ -166,6 +179,12 @@ export default class TwoGame extends Component {
                   gameOver: true,
                   message: "Game over!",
                 });
+                const response = await https.patch(
+                  `/users/updateuserscore/${
+                    JSON.parse(localStorage.getItem("USER_LOCAL")).user.id
+                  }`,
+                  { twoGameScore: this.state.score }
+                );
               } else {
                 this.setState({
                   board: downWithRandom,
@@ -184,6 +203,12 @@ export default class TwoGame extends Component {
                   gameOver: true,
                   message: "Game over!",
                 });
+                const response = await https.patch(
+                  `/users/updateuserscore/${
+                    JSON.parse(localStorage.getItem("USER_LOCAL")).user.id
+                  }`,
+                  { twoGameScore: this.state.score }
+                );
               } else {
                 this.setState({
                   board: leftWithRandom,

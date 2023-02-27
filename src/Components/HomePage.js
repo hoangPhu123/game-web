@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AboutUsHome from "./HomePages/AboutUsHome";
 import Banner from "./HomePages/Banner";
 import Blog from "./HomePages/Blog";

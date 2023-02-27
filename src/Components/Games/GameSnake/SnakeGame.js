@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import "../../../assets/css/snakeGame.css";
-import { useUpdateUserInfo } from "../../../service/userService";
+import { https } from "../../../service/configURL";
+import {
+  handleUpdateUserScore,
+  useUpdateUserInfo,
+} from "../../../service/userService";
 import ComeBack from "../../ComeBack/ComeBack";
 
 function withMyHook(Component) {
@@ -423,9 +427,15 @@ class SNAKE extends Component {
     async function gameOver() {
       if (!maxScore) maxScore = score;
       if (score > maxScore) maxScore = score;
+      const response = await https.patch(
+        `/users/updateuserscore/${
+          JSON.parse(localStorage.getItem("USER_LOCAL")).user.id
+        }`,
+        { snakeScore: score }
+      );
       // this.props.updateUser({ snake_game: maxScore });
 
-      window.localStorage.setItem("maxScore", maxScore);
+      window.localStorage.setItem("maxSnakeScore", maxScore);
       CTX.fillStyle = "#4cffd7";
       CTX.textAlign = "center";
       CTX.font = "bold 30px Poppins, sans-serif";

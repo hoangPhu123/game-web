@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../../assets/css/menjaGame.css";
+import { https } from "../../../service/configURL";
 import ComeBack from "../../ComeBack/ComeBack";
 
 export default class Menja extends Component {
@@ -1420,11 +1421,17 @@ export default class Menja extends Component {
       isPaused() && setActiveMenu(null);
     }
 
-    function endGame() {
+    async function endGame() {
       handleCanvasPointerUp();
       if (isNewHighScore()) {
         setHighScore(state.game.score);
       }
+      const response = await https.patch(
+        `/users/updateuserscore/${
+          JSON.parse(localStorage.getItem("USER_LOCAL")).user.id
+        }`,
+        { menjaScore: state.game.score }
+      );
       setActiveMenu(MENU_SCORE);
     }
 

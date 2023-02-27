@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../../assets/css/colorBlastGame.css";
+import { https } from "../../../service/configURL";
 import ComeBack from "../../ComeBack/ComeBack";
 
 export default class ColorBlast extends Component {
@@ -151,11 +152,17 @@ export default class ColorBlast extends Component {
         this.paused = false;
       },
 
-      gameOver: function () {
+      gameOver: async function () {
         this.isGameOver = true;
         this.clear();
         var message = "Game Over";
         var message2 = "Score: " + Game.score;
+        const response = await https.patch(
+          `/users/updateuserscore/${
+            JSON.parse(localStorage.getItem("USER_LOCAL")).user.id
+          }`,
+          { colorBlastScore: Game.score }
+        );
         var message3 = "Click or press Spacebar to Play Again";
         this.pause();
         this.ctx.fillStyle = "white";

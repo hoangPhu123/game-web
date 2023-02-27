@@ -19,6 +19,7 @@ import { setUserUpdateActionService } from "../../redux/action/userAction";
 import { UPDATE_USER_INFOR } from "../../redux/constant/userConstant";
 import swal from "sweetalert";
 import { userLocalService } from "../../service/localService";
+import { https } from "../../service/configURL";
 
 function createData(name, scores) {
   return { name, scores };
@@ -32,6 +33,33 @@ function PersonalInfo() {
   const user = useSelector((state) => {
     return state.userReducer.user.user;
   });
+
+  useEffect(() => {
+    const updateUserInfo = async () => {
+      const response = await https.get(
+        `/users/${JSON.parse(localStorage.getItem("USER_LOCAL")).user.id}`
+      );
+      // console.log("ewsss", response.data);
+      if (
+        user &&
+        (user.score !== response.data.score ||
+          user.snake_score !== response.data.snake_score ||
+          user.menja_score !== response.data.menja_score ||
+          user.color_blast_score !== response.data.color_blast_score)
+      ) {
+        let userJson = JSON.parse(localStorage.getItem("USER_LOCAL"));
+        localStorage.setItem(
+          "USER_LOCAL",
+          JSON.stringify({
+            ...userJson,
+            user: response.data,
+          })
+        );
+        window.location.reload();
+      }
+    };
+    updateUserInfo();
+  }, []);
 
   const handleLogout = async () => {
     // delete data from localStorage

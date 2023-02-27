@@ -53,6 +53,33 @@ export const useUpdateUserInfo = () => {
     }
   };
 };
+
+// export const handleUpdateUserScore = (userScore) => (dispatch, getState) => {
+//   console.log("user nefk");
+
+// try {
+//   const { user } = getState();
+//   console.log("user nefk", user);
+// } catch (error) {
+// dispatch({
+//     type: USER_DETAILS_FAIL,
+//     payload: error.response && error.response.data.msg ? error.response.data.msg : error.message,
+// });
+// }
+// };
+export const handleUpdateUserScore = async () => {
+  return async (userScore) => {
+    console.log("userscore", userScore);
+    try {
+      // const response = await https.patch(`/updateuserscore/${user.id}`, {
+      //   userScore,
+      // });
+      // return response;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
 // const navigate = useNavigate();
 
 // export const useUpdateUserInfo = (data) => {
