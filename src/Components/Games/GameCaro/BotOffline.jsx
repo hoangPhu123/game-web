@@ -1,4 +1,4 @@
-import { SPACE_STATE } from "./CaroGame";
+import { SPACE_STATE } from "./OfflineCaro";
 
 // Calculate the best space for the AI to fill to get a perfect game.
 export const calculateAITurn = (grid, moveCount) => {

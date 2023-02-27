@@ -106,6 +106,21 @@ const checkWinner = (grid, moveCount) => {
     [2, 4, 6],
   ];
 
+  // const winnerSpaces = [
+  //   [0, 1, 2, 3, 4],
+  //   [5, 6, 7, 8, 9],
+  //   [10, 11, 12, 13, 14],
+  //   [15, 16, 17, 18, 19],
+  //   [20, 21, 22, 23, 24],
+  //   [0, 5, 10, 15, 20],
+  //   [1, 6, 11, 16, 21],
+  //   [2, 7, 12, 17, 22],
+  //   [3, 8, 13, 18, 23],
+  //   [4, 9, 14, 19, 24],
+  //   [0, 6, 12, 18, 24],
+  //   [4, 8, 12, 16, 20],
+  // ];
+
   if (isDraw(moveCount)) {
     return {
       winner: GAME_STATE.DRAW,
@@ -141,6 +156,27 @@ const checkWinner = (grid, moveCount) => {
   }
 
   return null;
+
+  // for (let i = 0; i < winnerSpaces.length; i++) {
+  //   const [a, b, c, d, e] = winnerSpaces[i];
+  //   if (
+  //     grid[a] &&
+  //     grid[a] === grid[b] &&
+  //     grid[a] === grid[c] &&
+  //     grid[a] === grid[d] &&
+  //     grid[a] === grid[e]
+  //   ) {
+  //     return grid[a];
+  //   }
+  // }
+
+  // // check if the grid is full
+  // if (grid.filter((x) => x).length === 25) {
+  //   return "tie";
+  // }
+
+  // // if no winner and the board is not full, the game is still in progress
+  // return null;
 };
 
 export default function CaroGame() {
@@ -265,6 +301,46 @@ export default function CaroGame() {
               <Square squareIndex={7} />
               <Square squareIndex={8} />
             </div>
+
+            {/* <div className="flex gap-5 mx-auto">
+              <Square squareIndex={1} />
+              <Square squareIndex={2} />
+              <Square squareIndex={3} />
+              <Square squareIndex={4} />
+              <Square squareIndex={5} />
+            </div>
+
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={6} />
+              <Square squareIndex={7} />
+              <Square squareIndex={8} />
+              <Square squareIndex={9} />
+              <Square squareIndex={10} />
+            </div>
+
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={11} />
+              <Square squareIndex={12} />
+              <Square squareIndex={13} />
+              <Square squareIndex={14} />
+              <Square squareIndex={15} />
+            </div>
+
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={16} />
+              <Square squareIndex={17} />
+              <Square squareIndex={18} />
+              <Square squareIndex={19} />
+              <Square squareIndex={20} />
+            </div>
+
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={21} />
+              <Square squareIndex={22} />
+              <Square squareIndex={23} />
+              <Square squareIndex={24} />
+              <Square squareIndex={25} />
+            </div> */}
           </div>
 
           <div className="text-center">
@@ -282,7 +358,7 @@ export default function CaroGame() {
                 className="text-blue-500 underline ml-1"
                 target="_blank"
                 rel="noopener"
-                href="https://www.gregorygaines.com"
+                href="#"
               >
                 Gregory Gaines
               </a>
@@ -292,7 +368,7 @@ export default function CaroGame() {
                 className="text-blue-500 underline ml-1"
                 target="_blank"
                 rel="noopener"
-                href="https://www.gregorygaines.com/blog/develop-unbeatable-tic-tac-toe-ai-react/"
+                href="#"
               >
                 here
               </a>

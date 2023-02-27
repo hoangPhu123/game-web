@@ -405,26 +405,66 @@ export default function CaroGame() {
               <Square squareIndex={7} />
               <Square squareIndex={8} />
             </div>
+            {/* 
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={1} />
+              <Square squareIndex={2} />
+              <Square squareIndex={3} />
+              <Square squareIndex={4} />
+              <Square squareIndex={5} />
+            </div>
+
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={6} />
+              <Square squareIndex={7} />
+              <Square squareIndex={8} />
+              <Square squareIndex={9} />
+              <Square squareIndex={10} />
+            </div>
+
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={11} />
+              <Square squareIndex={12} />
+              <Square squareIndex={13} />
+              <Square squareIndex={14} />
+              <Square squareIndex={15} />
+            </div>
+
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={16} />
+              <Square squareIndex={17} />
+              <Square squareIndex={18} />
+              <Square squareIndex={19} />
+              <Square squareIndex={20} />
+            </div>
+
+            <div className="flex gap-5 mx-auto">
+              <Square squareIndex={21} />
+              <Square squareIndex={22} />
+              <Square squareIndex={23} />
+              <Square squareIndex={24} />
+              <Square squareIndex={25} />
+            </div> */}
           </div>
 
           <div className="text-center">
-            {/* <button
+            <button
               className="bg-blue-500 text-white w-full py-2 font-semibold mt-10 rounded-md shadow-lg mb-5"
               onClick={() => {
                 reset();
               }}
             >
               Reset
-            </button> */}
+            </button>
             {/* <span className="block mt-5">
               Created by
               <a
                 className="text-blue-500 underline ml-1"
                 target="_blank"
                 rel="noopener"
-                href="https://www.gregorygaines.com"
+                href="#"
               >
-                Gregory Gaines
+                Hoang Phu
               </a>
               .
               <br /> Check out the tutorial
@@ -432,7 +472,7 @@ export default function CaroGame() {
                 className="text-blue-500 underline ml-1"
                 target="_blank"
                 rel="noopener"
-                href="https://www.gregorygaines.com/blog/develop-unbeatable-tic-tac-toe-ai-react/"
+                href="#"
               >
                 here
               </a>
