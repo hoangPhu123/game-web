@@ -8,6 +8,7 @@ import PlayerDetail from "./PlayerDetail/PlayerDetail";
 import AllGames from "./AllGames/AllGames";
 import AboutUs from "./AboutUs/AboutUs";
 import ContactForm from "./ContactForm/ContactForm";
+import HighScore from "./HighScore/HighScore";
 import CaroGame from "./Games/GameCaro/CaroGame";
 import OfflineCaro from "./Games/GameCaro/OfflineCaro";
 import ColorBlast from "./Games/GameColorBlast/ColorBlastGame";
@@ -95,6 +96,14 @@ const MainRouter = () => (
         element={
           <Layout>
             <ContactForm />
+          </Layout>
+        }
+      />
+      <Route
+        path="/highscore"
+        element={
+          <Layout>
+            <HighScore />
           </Layout>
         }
       />
