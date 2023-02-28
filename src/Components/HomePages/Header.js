@@ -70,6 +70,14 @@ export default function Header() {
                       </li>
                     ) : null}
 
+                    {user ? (
+                      <li className="sub__pages">
+                        <NavLink to="/highscore">
+                          <a href="#">Highest Score</a>
+                        </NavLink>
+                      </li>
+                    ) : null}
+
                     <li className="sub__pages">
                       <NavLink to="/signup">
                         <a href="#">Sign Up</a>
