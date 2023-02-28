@@ -16,15 +16,11 @@ function createData(name, scores) {
 }
 
 export default function ItemDetail({ data }) {
-  const user = useSelector((state) => {
-    return state.userReducer.user.user;
-  });
-
   const rows = [
-    createData("Color Blast", user.color_blast_score),
-    createData("Menja", user.menja_score),
-    createData("Snake", user.snake_score),
-    createData("2048", user.score),
+    createData("Color Blast", data?.color_blast_score),
+    createData("Menja", data?.menja_score),
+    createData("Snake", data?.snake_score),
+    createData("2048", data?.score),
   ];
   return (
     <div className="item__detail">

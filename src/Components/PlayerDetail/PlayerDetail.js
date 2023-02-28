@@ -9,6 +9,7 @@ import { useGetAllUsers } from "../../service/userService";
 
 export default function PlayerDetail() {
   const [listUsers, setListUsers] = useState([]);
+  console.log("listUsers: ", listUsers);
   const [activePlayer, setActivePlayer] = useState();
 
   const renderListPlayerInfo = (list) => {

@@ -33,6 +33,7 @@ export default function Players() {
       const filterUsers = listUsers.filter((item) => {
         return item.name.toLowerCase().includes(values.toLowerCase());
       });
+
       return setListUsers(filterUsers);
     } else {
       return setListUsers(listUsersTemp);
